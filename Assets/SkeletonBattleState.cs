@@ -24,12 +24,21 @@ public class SkeletonBattleState : EnemyState
     {
         base.Update();
 
-        if (enemy.IsPlayerDetected() && enemy.IsPlayerDetected().distance < enemy.attackDistance)
+        if (enemy.IsPlayerDetected())
         {
-            //Debug.Log("I Attack");
-            if(CanAttack())
-                stateMachine.ChangeState(enemy.attackState);
+            stateTimer = enemy.battleTime;
+            if (enemy.IsPlayerDetected().distance < enemy.attackDistance)
+            {
+                //Debug.Log("I Attack");
+                if(CanAttack())
+                    stateMachine.ChangeState(enemy.attackState);
+            }
+        }else
+        {
+            if (stateTimer < 0 || Vector2.Distance(player.transform.position, enemy.transform.position) > 15f)
+                stateMachine.ChangeState(enemy.idleState);
         }
+
 
         if (player.position.x > enemy.transform.position.x)
             moveDir = 1;
