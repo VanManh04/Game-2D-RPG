@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 160240829}
   - component: {fileID: 160240830}
   - component: {fileID: 160240831}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 721615504}
   - component: {fileID: 721615503}
   - component: {fileID: 721615502}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,9 +870,9 @@ Transform:
   m_GameObject: {fileID: 721615500}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.02, y: -2.71, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -2.56, y: 0.08, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 160240829}
   - {fileID: 1929282142}
@@ -897,6 +897,9 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
   moveSpeed: 1.5
   idleTime: 2
 --- !u!61 &721615503
@@ -970,7 +973,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &869699758
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 869699759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3399,7 +3402,7 @@ GameObject:
   - component: {fileID: 1511928772}
   - component: {fileID: 1511928771}
   - component: {fileID: 1511928773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3738,7 +3741,7 @@ GameObject:
   - component: {fileID: 1752805436}
   - component: {fileID: 1752805435}
   - component: {fileID: 1752805434}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3862,7 +3865,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1929282142}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3893,7 +3896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2138337554}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3921,7 +3924,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 442364894}
+  - {fileID: 1208032056}
   - {fileID: 1752805433}
   - {fileID: 215573794}
-  - {fileID: 1208032056}
   - {fileID: 721615501}
