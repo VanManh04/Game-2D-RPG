@@ -16,20 +16,17 @@ public class PlayerPrimaryAttackState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        xInput = 0; //we need this to fix bug on attack direction
 
         if (comboCounter > 2 || Time.time >= lastTimeAttacked + comboWindow)
             comboCounter = 0;
 
         player.anim.SetInteger("ComboCounter", comboCounter);
 
-        #region Choose attack direction
-
         float attackDir = player.facingDir;
 
         if(xInput!=0)
             attackDir = xInput;
-
-        #endregion
 
         player.SetVelocity(player.attackMovement[comboCounter].x * attackDir, player.attackMovement[comboCounter].y);
 
