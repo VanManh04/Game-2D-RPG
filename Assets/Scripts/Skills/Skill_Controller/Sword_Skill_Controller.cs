@@ -14,6 +14,11 @@ public class Sword_Skill_Controller : MonoBehaviour
     private bool canRotate = true;
     private bool isReturning;
 
+    public float bounceSpeed;
+    public bool isBouncing = true;
+    public int amountOfBounce = 4;
+    public List<Transform> enemyTarget;
+    private int targetIndex;
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
@@ -52,7 +57,25 @@ public class Sword_Skill_Controller : MonoBehaviour
                 player.CatchTheSword();
         }
 
+        if (isBouncing && enemyTarget.Count > 0)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, enemyTarget[targetIndex].position, bounceSpeed * Time.deltaTime);
 
+            if (Vector2.Distance(transform.position, enemyTarget[targetIndex].position) < .1f)
+            {
+                targetIndex++;
+                amountOfBounce--;
+
+                if (amountOfBounce <= 0)
+                {
+                    isBouncing = false;
+                    isReturning = true;
+                }
+
+                if (targetIndex >= enemyTarget.Count)
+                    targetIndex = 0;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,13 +83,35 @@ public class Sword_Skill_Controller : MonoBehaviour
         if (isReturning)
             return;
 
-        anim.SetBool("Rotation", false);
+        if (collision.GetComponent<Enemy>() != null)
+        {
+            if (isBouncing && enemyTarget.Count <= 0)
+            {
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 10f);
+
+                foreach (var hit in colliders)
+                {
+                    if (hit.GetComponent<Enemy>() != null)
+                        enemyTarget.Add(hit.transform);
+                }
+            }
+        }
+
+        StuckInto(collision);
+    }
+
+    private void StuckInto(Collider2D collision)
+    {
         canRotate = false;
         cd.enabled = false;
 
         rb.isKinematic = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
+        if (isBouncing && enemyTarget.Count>0)
+            return;
+
+        anim.SetBool("Rotation", false);
         transform.parent = collision.transform;
     }
 }
