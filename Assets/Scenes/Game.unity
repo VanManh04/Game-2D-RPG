@@ -4171,6 +4171,7 @@ MonoBehaviour:
   jumpForce: 12
   dashSpeed: 20
   dashDuration: 0.2
+  sword: {fileID: 0}
 --- !u!50 &1752805435
 Rigidbody2D:
   serializedVersion: 4
