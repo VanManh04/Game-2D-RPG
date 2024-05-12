@@ -3,8 +3,23 @@ using System.Collections.Generic;
 using Unity.Profiling;
 using UnityEngine;
 
+public enum SwordType
+{
+    Regular,
+    Bounce,
+    Pierce,
+    Spin
+}
+
 public class Sword_Skill : Skill
 {
+    public SwordType swordType = SwordType.Regular;
+
+    [Header("Bounce info")]
+    [SerializeField] private int amountOfBounce;
+    [SerializeField] private float bounceGravity;
+
+
     [Header("Skill info")]
     [SerializeField] private GameObject swordPrefabs;
     [SerializeField] private Vector2 launchForce;
@@ -46,6 +61,12 @@ public class Sword_Skill : Skill
         GameObject newSword = Instantiate(swordPrefabs, player.transform.position, transform.rotation);
         Sword_Skill_Controller newSwordScript = newSword.GetComponent<Sword_Skill_Controller>();
 
+        if (swordType == SwordType.Bounce)
+        {
+            swordGravity = bounceGravity;
+            newSwordScript.SetupBounce(true, amountOfBounce);
+        }
+
         newSwordScript.SetupSword(finalDir, swordGravity,player);
 
         player.AssignNewSword(newSword);
@@ -53,6 +74,7 @@ public class Sword_Skill : Skill
         DostActive(false);
     }
 
+    #region Aim region
     public Vector2 AimDirection()
     {
         Vector2 playerPosition = player.transform.position;
@@ -90,4 +112,6 @@ public class Sword_Skill : Skill
 
         return position;
     }
+
+    #endregion
 }
