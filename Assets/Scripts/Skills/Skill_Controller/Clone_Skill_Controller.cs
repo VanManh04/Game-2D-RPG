@@ -32,13 +32,14 @@ public class Clone_Skill_Controller : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void SetupClone(Transform _newTrabsform,float _cloneDuration,bool _canAttack)
+    public void SetupClone(Transform _newTrabsform,float _cloneDuration,bool _canAttack,Vector3 _offset)
     {
         anim = GetComponent<Animator>();
 
-        transform.position = _newTrabsform.position;
         if (_canAttack)
             anim.SetInteger("AttackNumber", Random.Range(1, 3));
+
+        transform.position = _newTrabsform.position + _offset;
         cloneTimer = _cloneDuration;
 
         FaceClosestTarget();

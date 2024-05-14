@@ -153,4 +153,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorLoosingSpeed: 1
   attackCheck: {fileID: 6877112690504764721}
-  attackCheckRadius: 0.8
+  attackCheckRadius: 1
