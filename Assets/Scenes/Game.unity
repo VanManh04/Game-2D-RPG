@@ -1127,7 +1127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &721615501
 Transform:
   m_ObjectHideFlags: 0
@@ -4693,11 +4693,12 @@ MonoBehaviour:
   clonePrefab: {fileID: 3963719567804964281, guid: e64d83bd11f8f194c80822a404f40c67, type: 3}
   cloneDuration: 1.5
   canAttack: 1
-  createClonOndashStart: 0
-  createCloneOnDashOver: 0
+  createClonOndashStart: 1
+  createCloneOnDashOver: 1
   canCreateCloneOnCounterAttack: 1
   canDuplivcateClone: 1
   chanceToDuplicate: 35
+  crystalInseadOfClone: 1
 --- !u!114 &1565803521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4743,7 +4744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
-  amountOfAttacks: 5
+  amountOfAttacks: 15
   cloneCooldown: 0.35
   blackholeDuration: 3
   blackHolePrefab: {fileID: 5774696348747161009, guid: 7d01b13a77fdcba448748d33762a371e, type: 3}
@@ -4766,10 +4767,10 @@ MonoBehaviour:
   crystalDuration: 1.5
   crystalPrefab: {fileID: 665214787059351132, guid: 7aa56397d97af17489d72130e48ba8a4, type: 3}
   cloneInsteadOfCrystal: 1
-  canExplode: 0
-  canMoveToEnemy: 0
+  canExplode: 1
+  canMoveToEnemy: 1
   moveSpeed: 5
-  canUseMultiStacks: 0
+  canUseMultiStacks: 1
   amountOfStacks: 3
   multiStackCooldown: 4
   useTimeWindow: 2.5
@@ -5646,10 +5647,6 @@ PrefabInstance:
     - target: {fileID: 665214787059351132, guid: 7aa56397d97af17489d72130e48ba8a4, type: 3}
       propertyPath: m_Name
       value: Crystal
-      objectReference: {fileID: 0}
-    - target: {fileID: 665214787059351132, guid: 7aa56397d97af17489d72130e48ba8a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6179833287534716485, guid: 7aa56397d97af17489d72130e48ba8a4, type: 3}
       propertyPath: m_LocalPosition.x
