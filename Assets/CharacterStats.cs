@@ -33,7 +33,7 @@ public class CharacterStats : MonoBehaviour
             Die();
     }
 
-    private void Die()
+    protected virtual void Die()
     {
         Debug.Log("Die");
         //throw new NotImplementedException();
