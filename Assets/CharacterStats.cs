@@ -69,6 +69,42 @@ public class CharacterStats : MonoBehaviour
         _targetStats.TakeDamage(totalMagicalDamage);
 
 
+        if (Mathf.Max(_fireDamage, _iceDamage, _lightingDamage) <= 0)
+            return;
+
+        bool canApplyIgnite = _fireDamage > _iceDamage && _fireDamage > _lightingDamage;
+        bool canApplyChill = _iceDamage > _fireDamage && _iceDamage > _lightingDamage;
+        bool canApplyShock = _lightingDamage > _fireDamage && _lightingDamage > _iceDamage;
+
+        while (!canApplyIgnite&&!canApplyChill&&!canApplyShock)
+        {
+            if (Random.value < .35f && _fireDamage > 0)
+            {
+                canApplyIgnite = true;
+                _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
+                Debug.Log("Applied fire");
+                return;
+            }
+
+            if (Random.value < .5f && _iceDamage > 0)
+            {
+                canApplyChill = true;
+                _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
+                Debug.Log("Applied ice");
+                return;
+            }
+
+            if (Random.value < .5f && _lightingDamage > 0)
+            {
+                canApplyShock = true;
+                _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
+                Debug.Log("Applied lighting");
+                return;
+            }
+        }
+
+        _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
+
     }
 
     private static int CheckTargetResistance(CharacterStats _targetStats, int totalMagicalDamage)
