@@ -15,22 +15,22 @@ public class Entity : MonoBehaviour
     #endregion
 
     [Header("Knockback info")]
-    [SerializeField] protected Vector2 knockbackDirection;
-    [SerializeField] protected float knockbackDuration;
-    protected bool isKnockback;
+    [SerializeField] protected Vector2 knockbackDirection;  //huong knockback
+    [SerializeField] protected float knockbackDuration;     //thoi gian knock back
+    protected bool isKnockback;     //Co de kiem tra knockback
 
     [Header("Collision info")]
-    public Transform attackCheck;
-    public float attackCheckRadius;
-    [SerializeField] protected Transform groundCheck;
-    [SerializeField] protected float groundCheckDistance;
-    [SerializeField] protected Transform wallCheck;
-    [SerializeField] protected float wallCheckDistance;
-    [SerializeField] protected LayerMask whatIsGround;
+    public Transform attackCheck;       // Tham chieu toi Transform de kiem tra attack
+    public float attackCheckRadius;     //ban kinh kiem tra Attack
+    [SerializeField] protected Transform groundCheck;       //Tham chieu toi Tranform de kiem tra mat fat
+    [SerializeField] protected float groundCheckDistance;       //Khoang cach de kiem tra mat dat
+    [SerializeField] protected Transform wallCheck;       //Tham chieu toi Tranform de kiem tra tuong
+    [SerializeField] protected float wallCheckDistance;       //Khoang cach de kiem tra tuong
+    [SerializeField] protected LayerMask whatIsGround;       //Layer kiem tra mat dat
 
 
-    public int facingDir { get; private set; } = 1;
-    protected bool facingRight = true;
+    public int facingDir { get; private set; } = 1;       //Huong doi mat
+    protected bool facingRight = true;       //co de kiem tra huong doi mat
 
     protected virtual void Awake()
     {
@@ -51,15 +51,17 @@ public class Entity : MonoBehaviour
     {
 
     }
-    
+
+    // Ph??ng th?c này ???c g?i khi Entity b? t?n công
+    // Kích ho?t hi?u ?ng flash và knockback
     public virtual void DamageEffect()
     {
         fx.StartCoroutine("FlashFX");
         StartCoroutine("HitKnockback");
         //Debug.Log(gameObject.name + " was damaged!");
     }
-
-    protected virtual IEnumerator HitKnockback()
+    
+    protected virtual IEnumerator HitKnockback()// Ph??ng th?c này x? lý knockback khi Entity b? t?n công
     {
         isKnockback = true;
         rb.velocity = new Vector2(knockbackDirection.x*-facingDir, knockbackDirection.y);
@@ -118,6 +120,7 @@ public class Entity : MonoBehaviour
     }
     #endregion
 
+    // Ph??ng th?c này ??t màu s?c c?a Entity
     public void Maketransprent(bool _transprent)
     {
         if (_transprent)

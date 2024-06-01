@@ -6,10 +6,10 @@ using UnityEngine;
 
 public enum SwordType
 {
-    Regular,
-    Bounce,
-    Pierce,
-    Spin
+    Regular,//Ki?m bình th??ng ném th?ng
+    Bounce,//Ki?m quay t? m?c tiêu này sang m?c tiêu khác r?i tr? v?
+    Pierce,//Ki?m xuyên m?c tiêu
+    Spin//Ki?m quay 1 ???ng th?ng mình ném xong tr? v?
 }
 
 public class Sword_Skill : Skill

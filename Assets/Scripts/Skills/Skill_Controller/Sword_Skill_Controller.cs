@@ -1,42 +1,42 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
 public class Sword_Skill_Controller : MonoBehaviour
 {
-    private Animator anim;
-    private Rigidbody2D rb;
-    private CircleCollider2D cd;
-    private Player player;
+    private Animator anim;      // Tham chiếu đến thành phần Animator của đối tượng kiếm, cho phép điều khiển các hoạt ảnh.
+    private Rigidbody2D rb;      // Tham chiếu đến thành phần Rigidbody2D của đối tượng kiếm, cho phép xử lý vật lý.
+    private CircleCollider2D cd;      // Tham chiếu đến thành phần CircleCollider2D của đối tượng kiếm, dùng để xử lý va chạm.
+    private Player player;      // Tham chiếu đến người chơi, giúp trong việc trả kiếm về cho người chơi khi cần thiết.
 
-    private bool canRotate = true;
-    private bool isReturning;
+    private bool canRotate = true;      // Biến kiểm soát xem kiếm có thể quay được không.
+    private bool isReturning;      // Biến kiểm soát xem kiếm đang trở về hay không.
 
-    private float freezeTimeDuration;
-    private float returnSpeed = 12f;
+    private float freezeTimeDuration;      // Thời gian đóng băng khi kiếm gây sát thương cho mục tiêu.
+    private float returnSpeed = 12f;      // Tốc độ trở về của kiếm khi nó được gọi trở lại.
 
-    [Header("Pierce info")]
-    [SerializeField] private float pierceAmount;
+    [Header("Pierce info")]//Kiếm xuyên mục tiêu
+    [SerializeField] private float pierceAmount;      //Số lần kiếm có thể xuyên qua mục tiêu.
 
-    [Header("Bounce info")]
-    private float bounceSpeed;
-    private bool isBouncing;
-    private int bounceAmount;
-    private List<Transform> enemyTarget;
-    private int targetIndex;
+    [Header("Bounce info")]//Kiếm quay từ mục tiêu này sang mục tiêu khác rồi trở về
+    private float bounceSpeed;      // Tốc độ khi kiếm nảy qua các mục tiêu.
+    private bool isBouncing;      // Biến kiểm soát xem kiếm có đang nảy không.
+    private int bounceAmount;      // Số lần kiếm có thể nảy qua các mục tiêu.
+    private List<Transform> enemyTarget;      // Danh sách mục tiêu của kiếm khi nó đang nảy.
+    private int targetIndex;      // Chỉ số của mục tiêu hiện tại mà kiếm đang nhắm vào khi nó đang nảy.
 
-    [Header("Spin info")]
-    private float maxTravelDistance;
-    private float spinDuration;
-    private float spinTimer;
-    private bool wasStopped;
-    private bool isSpinning;
+    [Header("Spin info")]//Kiếm quay 1 đường thẳng mình ném xong trở về
+    private float maxTravelDistance;      // Khoảng cách tối đa mà kiếm có thể di chuyển trước khi dừng quay.
+    private float spinDuration;      // Thời gian mà kiếm sẽ quay trước khi quay trở lại.
+    private float spinTimer;      // Đếm thời gian cho tính năng quay của kiếm.
+    private bool wasStopped;      // Biến kiểm soát xem kiếm đã dừng lại khi quay hay chưa.
+    private bool isSpinning;      // Biến kiểm soát xem kiếm đang quay hay không.
 
-    private float hitTimer;
-    private float hitCooldown;
+    private float hitTimer;      // Đếm thời gian giữa các lần gây sát thương khi kiếm đang quay.
+    private float hitCooldown;      // Thời gian giữa các lần gây sát thương khi kiếm đang quay.
 
-    private float spinDirection;
+    private float spinDirection;      // Hướng quay của kiếm.
 
     private void Awake()
     {
@@ -50,6 +50,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    //Cấu hình thông số cho kiếm như hướng, trọng lực, thời gian đóng băng, và tốc độ trở về.
     public void SetupSword(Vector2 _dir, float _gravityScale,Player _player,float _freezeTimeDuration,float _returnSpeed)
     {
         player = _player;
@@ -67,6 +68,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         Invoke("DestroyMe", 7f);
     }
 
+    //Cấu hình thông số cho tính năng nảy, bao gồm số lần nảy và tốc độ nảy.
     public void SetupBounce(bool _isBouncing,int _amountOfBounces,float _bounceSpeed)
     {
         isBouncing = _isBouncing;
@@ -76,11 +78,13 @@ public class Sword_Skill_Controller : MonoBehaviour
         enemyTarget = new List<Transform>();
     }
 
+    //Cấu hình thông số cho tính năng xuyên qua.
     public void SetupPierce(int _pierceAmount)
     {
         pierceAmount = _pierceAmount;
     }
 
+    // Cấu hình thông số cho tính năng quay, bao gồm khoảng cách tối đa, thời gian quay, và thời gian nghỉ giữa các lần quay.
     public void SetupSpin(bool _isSpinning, float _maxTravelDistance, float _spinDuration,float _hitCooldown)
     {
         isSpinning = _isSpinning;
@@ -89,6 +93,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         hitCooldown = _hitCooldown;
     }
 
+    //Trả lại kiếm về cho người chơi.
     public void ReturnSword()
     {
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -114,6 +119,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         SpinLogic();
     }
 
+    //Xử lý logic cho tính năng quay của kiếm.
     private void SpinLogic()
     {
         if (isSpinning)
@@ -152,6 +158,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         }
     }
 
+    // Dừng kiếm khi đang quay.
     private void StopWhenSpinning()
     {
         wasStopped = true;
@@ -159,6 +166,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         spinTimer = spinDuration;
     }
 
+    //Xử lý logic cho tính năng nảy của kiếm.
     private void BounceLogic()
     {
         if (isBouncing && enemyTarget.Count > 0)
@@ -184,6 +192,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         }
     }
 
+    //Xử lý khi kiếm va chạm vào các đối tượng, bao gồm tính năng gây sát thương, xuyên qua, nảy, và dính vào.
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isReturning)
@@ -200,12 +209,14 @@ public class Sword_Skill_Controller : MonoBehaviour
         StuckInto(collision);
     }
 
+    //Gây sát thương cho mục tiêu và bắt đầu thời gian đóng băng.
     private void SwordSkillDamage(Enemy enemy)
     {
         enemy.DamageEffect();
         enemy.StartCoroutine("FreezeTimerFor", freezeTimeDuration);
     }
 
+    //Thiết lập mục tiêu cho tính năng nảy.
     private void SetupTargetsGorBounce(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
@@ -223,6 +234,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         }
     }
 
+    //Xử lý khi kiếm đâm vào đối tượng và dính vào hoặc dừng lại.
     private void StuckInto(Collider2D collision)
     {
         if (pierceAmount > 0 && collision.GetComponent<Enemy>() != null)

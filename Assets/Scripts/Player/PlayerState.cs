@@ -1,40 +1,40 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// PlayerState là l?p c? s? cho các tr?ng thái c?a ng??i ch?i
+// PlayerState la lop co so cho trang thai cua nguoi choi
 public class PlayerState
 {
-    protected PlayerStateMachine stateMachine;  // Tham chi?u t?i máy tr?ng thái c?a ng??i ch?i
-    protected Player player;  // Tham chi?u t?i ??i t??ng ng??i ch?i
+    protected PlayerStateMachine stateMachine;  // Tham chieu toi may trang thai cua nguoi choi
+    protected Player player;  // Tham tham chieu toi nguoi choi
 
-    protected Rigidbody2D rb;  // Tham chi?u t?i Rigidbody2D c?a ng??i ch?i
+    protected Rigidbody2D rb;  // Tham chieu toi Rigidbody2D cua nguoi cho
 
-    protected float xInput;  // Bi?n l?u tr? giá tr? nh?p tr?c X
-    protected float yInput;  // Bi?n l?u tr? giá tr? nh?p tr?c 
-    protected string animBoolName;  // Tên bi?n bool trong Animator ?? ?i?u khi?n ho?t ?nh
+    protected float xInput;  // Bien luu gia tri cua truc X
+    protected float yInput;  // Bien luu gia tri cua truc Y
+    protected string animBoolName;  // Ten bien bool trong Animator de dieu khá»‰n hoat anh
 
-    protected float stateTimer;  // B? ??m th?i gian cho tr?ng thái
-    protected bool triggerCalled;  // C? ?? ki?m tra xem trigger ?ã ???c g?i hay ch?a
+    protected float stateTimer;  // bo dem thoi gian cho trang thai
+    protected bool triggerCalled;  // Co de kiem tra xem trigger da duoc goi hay chue
 
 
-    // Hàm d?ng c?a PlayerState
+    // Ham dung cua PlayerState
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
     {
-        this.player = _player;  //Gán tham chi?u t?i ??i t??ng ng??i ch?i
-        this.stateMachine = _stateMachine;  //Gán tham chi?u t?i máy tr?ng thái
-        this.animBoolName = _animBoolName;  //Gán tên bi?n bool trong Animation
+        this.player = _player;  // Gan tham chieu toi doi tuong nguoi choi
+        this.stateMachine = _stateMachine;  // Gan tham chieu toi may trang thai
+        this.animBoolName = _animBoolName;  // Gan ten bien bool trong Animation
     }
 
-    //Enter ???c g?i khi tr?ng thái này ???c kích ho?t
+    // Enter duoc goi khi trang thai nay duoc kich hoat
     public virtual void Enter()
     {
-        player.anim.SetBool(animBoolName,true); //B?t ho?t ?nh tham chi?u
-        rb = player.rb; //L?u tham chi?u t?i RB
-        triggerCalled = false;  //??t l?i c? Trigger
+        player.anim.SetBool(animBoolName,true); // Bat hoat anh tham chieu
+        rb = player.rb; // Luu tham chieu toi RB
+        triggerCalled = false;  // Dat lai co Trigger
     }
 
-    //G?i m?i frame
+    // Goi moi frame
     public virtual void Update()
     {
         //Debug.Log("I am in " + animBoolName);
@@ -48,12 +48,12 @@ public class PlayerState
 
     public virtual void Exit()
     {
-        player.anim.SetBool(animBoolName,false);    //T?t ho?t ?nh t??ng ?ng
+        player.anim.SetBool(animBoolName,false);    // Tat hoat anh tuong ung
     }
 
-    // Ph??ng th?c AnimationFinishTrigger ???c g?i khi ho?t ?nh k?t thúc
+    // Phuong thuc AnimationFinishTrigger duoc goi khi hoat anh ket thuc
     public virtual void AnimationFinishTrigger()
     {
-        triggerCalled = true;   // ??t c? trigger thành true
+        triggerCalled = true;   // Dat co trigger thanh true
     }
 }
