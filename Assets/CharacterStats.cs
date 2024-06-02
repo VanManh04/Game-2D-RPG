@@ -5,61 +5,61 @@ public class CharacterStats : MonoBehaviour
     private EntityFX fx;
 
     [Header("Major stats")]
-    public Stat strength; //1 point increase damage by 1 and crit.power by 1% (1đ -> damage+1, chí mạng +1)
-    public Stat agility; //1 point increase evasion by 1% and crit.chance by 1% (1 điểm tăng né tránh thêm 1% và cơ hội chí mạng thêm 1%)
-    public Stat intelgence;// 1 point increase magic damage by 1 and magic resistance by 3  (1 điểm tăng sát thương phép thêm 1 và kháng phép thêm 3)
-    public Stat vitality;//1 point increase health by 3 or 5 points (1 điểm tăng máu thêm từ 3 đến 5 đơn vị)
+    public Stat strength; //1 point increase damage by 1 and crit.power by 1% (1đ -> damage+1, chi mang +1)
+    public Stat agility; //1 point increase evasion by 1% and crit.chance by 1% (1 diem tang ne tranh them 1% va co hoi chi mang len 1%)
+    public Stat intelgence;// 1 point increase magic damage by 1 and magic resistance by 3  (1 diem tang sat thuong them 1 va khang phep them 3 3)
+    public Stat vitality;//1 point increase health by 3 or 5 points (1 diem tang mau tu 3 - 5 don vi)
 
     [Header("Offensive stats")]
-    public Stat damage;     //Tổng sát thương
-    public Stat critChance;     //Tỉ lệ chí mạng
-    public Stat critPower;          //Default value = 150 % ( Sức mạnh chí mạng giá trị mặc định = 150% )
+    public Stat damage;     //tong sat thuong
+    public Stat critChance;     //ti le chi mang
+    public Stat critPower;          //Default value = 150 % ( suc manh chi mang gia tri mac dinh = 150% )
 
     [Header("Defensive stats")]
-    public Stat maxHealth;      //Máu tối đa
-    public Stat armor;      //Giáp
-    public Stat evasion;      //Né tránh 
-    public Stat magicResistance;      //Kháng phép
+    public Stat maxHealth;      //mau toi da
+    public Stat armor;      //giap
+    public Stat evasion;      //ne tranh
+    public Stat magicResistance;      //khang phep
 
     [Header("Magic stats")]
-    public Stat fireDamage;     //Sát thương lửa
-    public Stat iceDamage;      //Sát thương băng
-    public Stat lightingDamage; //Sát thương sét
+    public Stat fireDamage;     //sat thuong lua
+    public Stat iceDamage;      //sat thuong bang
+    public Stat lightingDamage; //sat thuong shock
 
-    public bool isIgnited;      // does damage over time "Hiệu ứng đốt cháy gây sát thương theo thời gian"
-    public bool isChilled;      // reduce armor by 20%  "Hiệu ứng làm lạnh giảm giáp 20%"
-    public bool isShocked;      // reduce accuracy by 20%   "Hiệu ứng sốc giảm chính xác 20%"
+    public bool isIgnited;      // does damage over time "hieu ung dot chay gay sat thuong theo thoi gian"
+    public bool isChilled;      // reduce armor by 20%  "hieu ung lam lanh giam giap 20%"
+    public bool isShocked;      // reduce accuracy by 20%   "hieu ung sock giam chinh xac 20%"
 
     [SerializeField] private float ailmentsDuration = 4;
-    private float ignitedTimer;     // Bộ đếm thời gian hiệu ứng đốt cháy
-    private float chilledTimer;     // Bộ đếm thời gian hiệu ứng làm lạnh
-    private float shockedTimer;     // Bộ đếm thời gian hiệu ứng sốc
+    private float ignitedTimer;     // bo dem thoi gian hieu ung dot chay
+    private float chilledTimer;     // bo dem thoi gian hieu ung lam lanh
+    private float shockedTimer;     // bo dem thoi gian hieu ung shock
 
 
-    private float igniteDamageCooldown = .3f;       // Thời gian chờ giữa các lần gây sát thương do đốt cháy
-    private float igniteDamageTimer;        // Bộ đếm thời gian gây sát thương do đốt cháy
-    private int igniteDamage;       // Sát thương do hiệu ứng đốt cháy
+    private float igniteDamageCooldown = .3f;       // thoi gian giua cac lan gaay sat thuong dot chay
+    private float igniteDamageTimer;        // bo dem thoi gian gay sat thuong do dot chay
+    private int igniteDamage;       // sat thuong do hieu ung dot chay
 
 
-    public int currentHealth;       // Máu hiện tại
+    public int currentHealth;       // mau hien tai
 
-    public System.Action onHealthChanged;       // Sự kiện khi máu thay đổi
+    public System.Action onHealthChanged;       // su kien khi mau thay doi
 
     protected virtual void Start()
     {
-        critPower.SetDefaultValue(150);     // Đặt giá trị mặc định cho sức mạnh chí mạng
-        currentHealth = GetMaxHealthValue();    // Khởi tạo máu hiện tại bằng giá trị máu tối đa
+        critPower.SetDefaultValue(150);     // default chi mang
+        currentHealth = GetMaxHealthValue();    // khoi tao mau toi da
         fx = GetComponent<EntityFX>();
         //Debug.Log("CharacterStats Call");
     }
 
     protected virtual void Update()
     {
-        ignitedTimer -= Time.deltaTime;     //thời gian đốt cháy
-        chilledTimer -= Time.deltaTime;     //thời gian làm lạnh
-        shockedTimer -= Time.deltaTime;     //thời gian sốc
+        ignitedTimer -= Time.deltaTime;
+        chilledTimer -= Time.deltaTime;
+        shockedTimer -= Time.deltaTime;
 
-        igniteDamageTimer -= Time.deltaTime;    // Giảm thời gian chờ gây sát thương do đốt cháy
+        igniteDamageTimer -= Time.deltaTime;
 
         if (ignitedTimer < 0)
             isIgnited = false;
@@ -70,69 +70,69 @@ public class CharacterStats : MonoBehaviour
         if(shockedTimer < 0)
             isShocked = false;
 
-        if (igniteDamageTimer < 0 && isIgnited)     // Nếu còn hiệu ứng đốt cháy và thời gian chờ đã hết
+        if (igniteDamageTimer < 0 && isIgnited)
         {
             Debug.Log("Take burn damage "+igniteDamage);
 
-            DecreaseHealthBy(igniteDamage);     // Gây sát thương do đốt cháy
+            DecreaseHealthBy(igniteDamage);     // gay sat thuong do dot chay
 
             if (currentHealth < 0)
                 Die();
 
-            igniteDamageTimer = igniteDamageCooldown;       // Đặt lại thời gian chờ gây sát thương do đốt cháy
+            igniteDamageTimer = igniteDamageCooldown;       // dat lai thoi gian cho gay sat thuong do dot chay
         }
     }
 
 
-    //Gây sát thương vật lý cho mục tiêu
+    //gay sat thuong vat ly cho muc tieu
     public virtual void DoDamage(CharacterStats _targetStats)
     {
         if (TargetCanAvoidAttack(_targetStats))
-            return;// Nếu mục tiêu tránh được đòn tấn công thì thoát hàm
+            return;// muc tieu trang duoc don tan cong -> thoat ham
 
-        int totalDamage = damage.GetValue() + strength.GetValue();// Tổng sát thương = sát thương cơ bản + sức mạnh
+        int totalDamage = damage.GetValue() + strength.GetValue();// tong sat thuong = sat thuong co ban + suc manh
 
         if (CanCrit())
         {
             //Debug.Log("CRIT HIT");
 
-            totalDamage = CalculateCritucalDamage(totalDamage);// Tính toán sát thương chí mạng nếu có thể chí mạng
+            totalDamage = CalculateCritucalDamage(totalDamage);// Tinh toan sat thuong chi mang neu co the chi mang
 
             //Debug.Log("Total crit damage is "+totalDamage);
         }
 
-        totalDamage = CheckTargetArmor(_targetStats, totalDamage);// Trừ giáp của mục tiêu từ tổng sát thương
+        totalDamage = CheckTargetArmor(_targetStats, totalDamage);// tru giap cua muc tieu tu tong sat thuong
         //_targetStats.TakeDamage(totalDamage);
-        DoMagicalDamage(_targetStats);// Gây sát thương phép
+        DoMagicalDamage(_targetStats);// gay sat thuong phep
     }
 
 
-    //Gây sát thương phép lên mục tiêu và áp dụng các hiệu ứng phép thuật.
+    //gay sat thuong phep len muc tieu va ap dung cac hieu ung phep thuat
     public virtual void DoMagicalDamage(CharacterStats _targetStats)
     {
-        int _fireDamage = fireDamage.GetValue(); // Lấy giá trị sát thương lửa
-        int _iceDamage = iceDamage.GetValue(); // Lấy giá trị sát thương băng
-        int _lightingDamage = lightingDamage.GetValue(); // Lấy giá trị sát thương sét
+        int _fireDamage = fireDamage.GetValue(); // lay gia tri sat thuong lua
+        int _iceDamage = iceDamage.GetValue(); // lay gia tri sat thuong bang
+        int _lightingDamage = lightingDamage.GetValue(); // lay gia tri sat thuong set
 
-        int totalMagicalDamage = _fireDamage + _iceDamage + _lightingDamage + intelgence.GetValue(); // Tổng sát thương phép
+        int totalMagicalDamage = _fireDamage + _iceDamage + _lightingDamage + intelgence.GetValue(); // tong sat thuong phep
 
-        totalMagicalDamage = CheckTargetResistance(_targetStats, totalMagicalDamage); // Trừ kháng phép của mục tiêu từ tổng sát thương phép
-        _targetStats.TakeDamage(totalMagicalDamage); // Gây sát thương phép lên mục tiêu
+        totalMagicalDamage = CheckTargetResistance(_targetStats, totalMagicalDamage); // tru khang phep cua muc tieu tu tong sat thuong phep
+        _targetStats.TakeDamage(totalMagicalDamage); // Gay sat thuong phep len muc tieu
 
 
         if (Mathf.Max(_fireDamage, _iceDamage, _lightingDamage) <= 0)
-            return; // Nếu không có sát thương phép thì thoát hàm
+            return; // neu khong co sat thuong thi thoat ham
 
-        bool canApplyIgnite = _fireDamage > _iceDamage && _fireDamage > _lightingDamage; // Kiểm tra có thể áp dụng hiệu ứng đốt cháy
-        bool canApplyChill = _iceDamage > _fireDamage && _iceDamage > _lightingDamage; // Kiểm tra có thể áp dụng hiệu ứng băng
-        bool canApplyShock = _lightingDamage > _fireDamage && _lightingDamage > _iceDamage; // Kiểm tra có thể áp dụng hiệu ứng sốc
+        bool canApplyIgnite = _fireDamage > _iceDamage && _fireDamage > _lightingDamage; // kiem tra ap dung hieu ung dot chay
+        bool canApplyChill = _iceDamage > _fireDamage && _iceDamage > _lightingDamage; // kiem tra ap dung hieu ung bang
+        bool canApplyShock = _lightingDamage > _fireDamage && _lightingDamage > _iceDamage; // kiem tra ap dung hieu ung shock
 
         while (!canApplyIgnite && !canApplyChill && !canApplyShock)
         {
             if (Random.value < .35f && _fireDamage > 0)
             {
                 canApplyIgnite = true;
-                _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock); // Áp dụng hiệu ứng
+                _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock); // ap dung hieu ung
                 Debug.Log("Applied fire");
                 return;
             }
@@ -140,7 +140,7 @@ public class CharacterStats : MonoBehaviour
             if (Random.value < .5f && _iceDamage > 0)
             {
                 canApplyChill = true;
-                _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock); // Áp dụng hiệu ứng
+                _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock); // ap dung hieu ung
                 Debug.Log("Applied ice");
                 return;
             }
@@ -148,31 +148,31 @@ public class CharacterStats : MonoBehaviour
             if (Random.value < .5f && _lightingDamage > 0)
             {
                 canApplyShock = true;
-                _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock); // Áp dụng hiệu ứng
+                _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock); // ap dung hieu ung
                 Debug.Log("Applied lighting");
                 return;
             }
         }
 
         if (canApplyIgnite)
-            _targetStats.SetupIgniteDamage(Mathf.RoundToInt(_fireDamage * .2f)); // Thiết lập sát thương đốt cháy
+            _targetStats.SetupIgniteDamage(Mathf.RoundToInt(_fireDamage * .2f)); // thiet lap sat thuong dot chay
 
-        _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock); // Áp dụng hiệu ứng
+        _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock); // ap dung hieu ung
     }
 
 
-    //Kiểm tra kháng phép của mục tiêu và điều chỉnh tổng sát thương phép dựa trên kháng phép và trí tuệ của mục tiêu.
+    //kiem tra khang phep cua muc tieu va dieu chinh tong sat thuong phep duwa tren khang phep va tri tue cua muc tieu
     private static int CheckTargetResistance(CharacterStats _targetStats, int totalMagicalDamage)
     {
-        // Trừ kháng phép của mục tiêu và chỉ số trí tuệ nhân 3 từ tổng sát thương phép
+        // Tru khang phep cua muc tieu va chi so tri tue nhan 3 tu tong sat thuong phep
         totalMagicalDamage -= _targetStats.magicResistance.GetValue() + (_targetStats.intelgence.GetValue() * 3);
 
-        totalMagicalDamage = Mathf.Clamp(totalMagicalDamage, 0, int.MaxValue);// Giới hạn tổng sát thương phép không nhỏ hơn 0
-        return totalMagicalDamage;// Trả về tổng sát thương phép sau khi trừ kháng phép và giới hạn
+        totalMagicalDamage = Mathf.Clamp(totalMagicalDamage, 0, int.MaxValue);// gioi han tong sat thuong phep khong nho hon 0
+        return totalMagicalDamage;// tra ve tong sat thuong phep
     }
 
 
-    //Áp dụng các hiệu ứng đốt cháy, làm lạnh và sốc lên nhân vật.
+    //Ap dung hieu ung dot chay,lam lanh ,sock len nhan vat
     public void ApplyAilments(bool _ignite, bool _chill, bool _shock)
     {
         if (isIgnited || isChilled || isShocked)
@@ -191,6 +191,8 @@ public class CharacterStats : MonoBehaviour
             isChilled = _chill;
             chilledTimer = ailmentsDuration;
 
+            float slowPrecentage = .2f;
+            GetComponent<Entity>().SlowEntityBy(slowPrecentage, ailmentsDuration);
             fx.ChillFXFor(ailmentsDuration);
         }
 
@@ -208,11 +210,11 @@ public class CharacterStats : MonoBehaviour
     }
 
 
-    //Thiết lập giá trị sát thương cho hiệu ứng đốt cháy.
+    //thiet lap gia tri sat thuowng cho hieu ung dot chay
     public void SetupIgniteDamage(int _damage) => igniteDamage = _damage;
 
 
-    //Gây sát thương cho nhân vật và kiểm tra xem nhân vật có chết không.
+    //Gay sat thuong cho nhan vat kiem tra xem nhan vat co chet khong
     public virtual void TakeDamage(int _damage)
     {
         DecreaseHealthBy(_damage);
@@ -224,7 +226,7 @@ public class CharacterStats : MonoBehaviour
     }
 
 
-    //Giảm máu hiện tại của nhân vật.
+    //Giamr mau hien tai cua nhan vat
     protected virtual void DecreaseHealthBy(int _damage)
     {
         currentHealth -= _damage;
@@ -240,56 +242,56 @@ public class CharacterStats : MonoBehaviour
     }
 
 
-    //Kiểm tra giáp của mục tiêu và giảm sát thương tương ứng.
+    //kiem tra giap cua muc tieu va giam sat thuong tuong ung
     private int CheckTargetArmor(CharacterStats _targetStats, int totalDamage)
     {
         if (_targetStats.isChilled)
-            totalDamage -= Mathf.RoundToInt(_targetStats.armor.GetValue() * .8f); // Nếu mục tiêu bị làm lạnh, giảm giáp của mục tiêu
+            totalDamage -= Mathf.RoundToInt(_targetStats.armor.GetValue() * .8f); // muc tieu bi lam lanh thi giam giap cua muc tieu
         else
-            totalDamage -= _targetStats.armor.GetValue(); // Giảm giáp của mục tiêu từ tổng sát thương
+            totalDamage -= _targetStats.armor.GetValue(); // giam giap cua muc tieu tu tong sat thuong
 
-        totalDamage = Mathf.Clamp(totalDamage, 0, int.MaxValue); // Giới hạn sát thương không nhỏ hơn 0
+        totalDamage = Mathf.Clamp(totalDamage, 0, int.MaxValue); // gioi han sat thuong khong nho hon 0
         return totalDamage;
     }
 
 
-    //Kiểm tra xem mục tiêu có thể né tránh đòn tấn công không.
+    //kiem tra muc tieu xem co the ne tranh don tan cong khong
     private bool TargetCanAvoidAttack(CharacterStats _targetStats)
     {
-        int totalEvasion = _targetStats.evasion.GetValue() + _targetStats.agility.GetValue();// Tổng né tránh = né tránh cơ bản + nhanh nhẹn
+        int totalEvasion = _targetStats.evasion.GetValue() + _targetStats.agility.GetValue();// tong ne tranh = ne tranh co ban + nhanh nhen
 
         if (isShocked)
-            totalEvasion += 20;// Nếu nhân vật bị sốc, tăng khả năng né tránh của mục tiêu
+            totalEvasion += 20;// nhan vat bi shock thi tang ne tranh cua muc tieu
 
         if (Random.Range(0, 100) < totalEvasion)
         {
             //Debug.Log("ATTACK AVOIDED");
-            return true;// Nếu né tránh lớn hơn số ngẫu nhiên từ 0 đến 100, đòn tấn công bị tránh
+            return true;// don tan cong bi tranh
         }
 
-        return false;// Đòn tấn công không bị tránh
+        return false;// don tan cong danh trung
     }
 
 
-    //Kiểm tra xem đòn tấn công có thể gây sát thương chí mạng không.
+    //Kiem tra don tam cong co the gay sat thuong chi mang hay khon
     private bool CanCrit()
     {
-        int totalCriticalChance = critChance.GetValue() + agility.GetValue();// Tổng cơ hội chí mạng = cơ hội chí mạng cơ bản + nhanh nhẹn
+        int totalCriticalChance = critChance.GetValue() + agility.GetValue();// tong co hoi chi mang = co hoi chi mang co ban + nhanh nhen
 
         if (Random.Range(0, 100) <= totalCriticalChance)
-            return true;// Nếu cơ hội chí mạng lớn hơn hoặc bằng số ngẫu nhiên từ 0 đến 100, có thể chí mạng
+            return true;//co the chi mang
 
         return false;
     }
 
 
 
-    //Tính toán sát thương chí mạng.
+    //Tinh toan sat thuong chi mang
     private int CalculateCritucalDamage(int _damage)
     {
-        float totalCritPower = (critPower.GetValue() + strength.GetValue()) * .01f;// Tính tổng sức mạnh chí mạng
+        float totalCritPower = (critPower.GetValue() + strength.GetValue()) * .01f;// tinh tong suc manh chi mang
 
-        float critDamage = _damage * totalCritPower;// Tính sát thương chí mạng
+        float critDamage = _damage * totalCritPower;// tinh sat thuong chi mang
 
         //Debug.Log("Total crit power % " + totalCritPower);
         //Debug.Log("crir damage before round up " + critDamage);
@@ -298,7 +300,7 @@ public class CharacterStats : MonoBehaviour
     }
 
 
-    //Tính toán và trả về giá trị máu tối đa của nhân vật.
+    //Tinh toan tra ve gia tri toi da cua mau
     public int GetMaxHealthValue()
     {
         return maxHealth.GetValue() + vitality.GetValue() * 5;

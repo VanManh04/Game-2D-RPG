@@ -4,29 +4,32 @@ using UnityEngine;
 public class Player : Entity
 {
     [Header("Attack details")]
-    public Vector2[] attackMovement;// Các h??ng t?n công c?a ng??i ch?i
-    public float counterAttackDuration = .2f;// Th?i gian ph?n công
+    public Vector2[] attackMovement;// cac huong tan cong cua nguoi cho
+    public float counterAttackDuration = .2f;// thoi gian phan cong
 
-    public bool isBusy { get; private set; }// Tr?ng thái b?n c?a ng??i ch?i
+    public bool isBusy { get; private set; }// trang thai ban cua nguoi choi
 
     [Header("Move info")]
     public float moveSpeed = 8f;
     public float jumpForce;
-    public float swordReturnImpact;// ?nh h??ng khi ki?m tr? v?
+    public float swordReturnImpact;// anh huong khi kiem tro ve
+    private float defaultMoveSpeed;
+    private float defaultJumpForce;
 
     [Header("Dash info")]
     public float dashSpeed;
     public float dashDuration;
+    private float defaultDashSpeed;
     public float dashDir { get; private set; }
 
 
-    public SkillManager skill {  get; private set; }// Trình qu?n lý k? n?ng
-    public GameObject sword; // { get; private set; }   // Ki?m c?a ng??i ch?i
+    public SkillManager skill {  get; private set; }// trinh quan ly skill
+    public GameObject sword; // { get; private set; }   // kiem cua nguoi choi
 
     #region State
-    public PlayerStateMachine stateMachine { get; private set; }// Máy tr?ng thái c?a ng??i ch?i
-    
-    // Các tr?ng thái c?a ng??i ch?i
+    public PlayerStateMachine stateMachine { get; private set; }// may trang thai cua nguoi choi
+
+    // Các trang thai cua nguoi choi
     public PlayerIdleState idleState { get; private set; }
     public PlayerMoveState moveState { get; private set; }
     public PlayerJumpState jumpState { get; private set; }
@@ -46,9 +49,9 @@ public class Player : Entity
     protected override void Awake()
     {
         base.Awake();
-        stateMachine = new PlayerStateMachine();// Kh?i t?o máy tr?ng thái
+        stateMachine = new PlayerStateMachine();// khoi tao trang thai
 
-        // Kh?i t?o các tr?ng thái
+        // khoi tao trang thai
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
         moveState = new PlayerMoveState(this, stateMachine, "Move");
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
@@ -72,32 +75,55 @@ public class Player : Entity
     {
         base.Start();
 
-        skill = SkillManager.instance;// Gán trình qu?n lý k? n?ng
+        skill = SkillManager.instance;// gan trinh quan ly skill
 
-        stateMachine.Initialize(idleState);// Kh?i t?o máy tr?ng thái v?i tr?ng thái ban ??u là idle
+        stateMachine.Initialize(idleState);// khoi tao may trang thai voi trang thai ban dau la idle
+
+        defaultMoveSpeed = moveSpeed;
+        defaultJumpForce = jumpForce;
+        defaultDashSpeed = dashSpeed;
     }
 
     protected override void Update()
     {
         base.Update();
-        stateMachine.currentState.Update();// G?i ph??ng th?c Update c?a tr?ng thái hi?n t?i
+        stateMachine.currentState.Update();// goi phuong thuc update cua trang thai hien tai
 
-        CheckForDashInput();// Ki?m tra ??u vào ?? th?c hi?n dash
+        CheckForDashInput();// kiem tra dau vao de thuc hien Dash
 
-        if (Input.GetKeyDown(KeyCode.F))// Ki?m tra và s? d?ng k? n?ng n?u phím F ???c nh?n
+        if (Input.GetKeyDown(KeyCode.F))
             skill.crystal.CanUseSkill();
     }
 
-    //Gán m?t ??i t??ng ki?m m?i cho ng??i ch?i
-    public void AssignNewSword(GameObject _newSword)
+    public override void SlowEntityBy(float _slowPercentage, float _slowDutation)
     {
-        sword = _newSword;// Gán ki?m m?i cho ng??i ch?i
+        moveSpeed = moveSpeed * (1 - _slowPercentage);
+        jumpForce = jumpForce * (1 - _slowPercentage);
+        dashSpeed = dashSpeed * (1 - _slowPercentage);
+        anim.speed = anim.speed * (1 - _slowPercentage);
+
+        Invoke("ReturnDefaultSpeed", _slowDutation);
     }
 
-    // Chuy?n sang tr?ng thái b?t ki?m và h?y ??i t??ng ki?m
+    protected override void ReturnDefaultSpeed()
+    {
+        base.ReturnDefaultSpeed();
+
+        moveSpeed = defaultMoveSpeed;
+        jumpForce = defaultJumpForce;
+        dashSpeed = defaultDashSpeed;
+    }
+
+    //gan mot doi tuong kiem cho nguoi choi
+    public void AssignNewSword(GameObject _newSword)
+    {
+        sword = _newSword;
+    }
+
+    // chuyen sang trang thai bat lay kiem va huy doi tuong kiem
     public void CatchTheSword()
     {
-        stateMachine.ChangeState(catchSword);// Chuy?n sang tr?ng thái b?t ki?m
+        stateMachine.ChangeState(catchSword);
         Destroy(sword);
     }
 
@@ -107,7 +133,7 @@ public class Player : Entity
     //}
 
 
-    //??t tr?ng thái b?n trong m?t kho?ng th?i gian nh?t ??nh
+    //bat trang thai ban trong khoang thoi fian nhat dinh
     public IEnumerator BusyFor(float _seconds)
     {
         isBusy = true;
@@ -117,11 +143,9 @@ public class Player : Entity
         isBusy = false;
     }
 
-    //G?i trigger k?t thúc ho?t ?nh c?a tr?ng thái hi?n t?i
+    //goi trigger va ket thuc hoat anh trang thai hien tai
     public void AnimationTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
-
-    //Ki?m tra ??u vào ?? th?c hi?n dash, n?u không phát hi?n t??ng và phím dash ???c nh?n.
     private void CheckForDashInput()
     {
         if (IsWallDetected())
@@ -137,8 +161,7 @@ public class Player : Entity
             stateMachine.ChangeState(dashState);
         }
     }
-
-    //G?i ph??ng th?c ch?t c?a l?p c? s? và chuy?n sang tr?ng thái ch?t khi ng??i ch?i ch?t.
+    
     public override void Die()
     {
         base.Die();

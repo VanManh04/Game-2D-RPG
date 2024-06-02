@@ -54,8 +54,17 @@ public class Entity : MonoBehaviour
 
     }
 
-    // Ph??ng th?c này ???c g?i khi Entity b? t?n công
-    // Kích ho?t hi?u ?ng flash và knockback
+    public virtual void SlowEntityBy(float _slowPercentage, float _slowDutation)//lam cham Entity bang phan tram lam cham va thoi gian lam cham
+    {
+        
+    }
+
+    protected virtual void ReturnDefaultSpeed()
+    {
+        anim.speed = 1;
+    }
+
+    //goi khi entity bo tan cong va bat FX...
     public virtual void DamageEffect()
     {
         fx.StartCoroutine("FlashFX");
@@ -63,7 +72,7 @@ public class Entity : MonoBehaviour
         //Debug.Log(gameObject.name + " was damaged!");
     }
     
-    protected virtual IEnumerator HitKnockback()// Ph??ng th?c này x? lý knockback khi Entity b? t?n công
+    protected virtual IEnumerator HitKnockback()// xu ly knockback khi entity bi tan cong
     {
         isKnockback = true;
         rb.velocity = new Vector2(knockbackDirection.x*-facingDir, knockbackDirection.y);
@@ -125,7 +134,7 @@ public class Entity : MonoBehaviour
     }
     #endregion
 
-    // Ph??ng th?c này ??t màu s?c c?a Entity
+    // doi mau sac cua entity
     public void Maketransprent(bool _transprent)
     {
         if (_transprent)
