@@ -212,7 +212,7 @@ public class Sword_Skill_Controller : MonoBehaviour
     //Gây sát thương cho mục tiêu và bắt đầu thời gian đóng băng.
     private void SwordSkillDamage(Enemy enemy)
     {
-        enemy.DamageEffect();
+        player.stats.DoDamage(enemy.GetComponent<CharacterStats>()); //enemy.DamageEffect();
         enemy.StartCoroutine("FreezeTimerFor", freezeTimeDuration);
     }
 

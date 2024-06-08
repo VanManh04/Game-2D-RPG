@@ -39,7 +39,8 @@ public class CharacterStats : MonoBehaviour
     private float igniteDamageCooldown = .3f;       // thoi gian giua cac lan gaay sat thuong dot chay
     private float igniteDamageTimer;        // bo dem thoi gian gay sat thuong do dot chay
     private int igniteDamage;       // sat thuong do hieu ung dot chay
-
+    [SerializeField] private GameObject shockStrikePrefabs;
+    private int shockDamage;       // sat thuong do hieu ung tia set 
 
     public int currentHealth;       // mau hien tai
 
@@ -67,12 +68,12 @@ public class CharacterStats : MonoBehaviour
         if (chilledTimer < 0)
             isChilled = false;
 
-        if(shockedTimer < 0)
+        if (shockedTimer < 0)
             isShocked = false;
 
         if (igniteDamageTimer < 0 && isIgnited)
         {
-            Debug.Log("Take burn damage "+igniteDamage);
+            Debug.Log("Take burn damage " + igniteDamage);
 
             DecreaseHealthBy(igniteDamage);     // gay sat thuong do dot chay
 
@@ -103,6 +104,9 @@ public class CharacterStats : MonoBehaviour
 
         totalDamage = CheckTargetArmor(_targetStats, totalDamage);// tru giap cua muc tieu tu tong sat thuong
         //_targetStats.TakeDamage(totalDamage);
+
+        //if invnteroy current weapon has fire effect
+        // then 
         DoMagicalDamage(_targetStats);// gay sat thuong phep
     }
 
@@ -157,6 +161,9 @@ public class CharacterStats : MonoBehaviour
         if (canApplyIgnite)
             _targetStats.SetupIgniteDamage(Mathf.RoundToInt(_fireDamage * .2f)); // thiet lap sat thuong dot chay
 
+        if (canApplyShock)
+            _targetStats.SetupShcokStrikeDamage(Mathf.RoundToInt(_lightingDamage * .1f)); //damage set
+
         _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock); // ap dung hieu ung
     }
 
@@ -175,10 +182,11 @@ public class CharacterStats : MonoBehaviour
     //Ap dung hieu ung dot chay,lam lanh ,sock len nhan vat
     public void ApplyAilments(bool _ignite, bool _chill, bool _shock)
     {
-        if (isIgnited || isChilled || isShocked)
-            return;
+        bool canApplyIgnite = !isIgnited && !isChilled && !isShocked;
+        bool canApplyChill = !isIgnited && !isChilled && !isShocked;
+        bool canApplyShock = !isIgnited && !isChilled;
 
-        if (_ignite)
+        if (_ignite && canApplyIgnite)
         {
             isIgnited = _ignite;
             ignitedTimer = ailmentsDuration;
@@ -186,7 +194,7 @@ public class CharacterStats : MonoBehaviour
             fx.IgniteFXFor(ailmentsDuration);
         }
 
-        if (_chill)
+        if (_chill && canApplyChill)
         {
             isChilled = _chill;
             chilledTimer = ailmentsDuration;
@@ -196,22 +204,75 @@ public class CharacterStats : MonoBehaviour
             fx.ChillFXFor(ailmentsDuration);
         }
 
-        if (_shock)
+        if (_shock && canApplyShock)
         {
-            isShocked = _shock;
-            shockedTimer = ailmentsDuration;
+            if (!isShocked)
+            {
+                ApplyShock(_shock);
+            }
+            else
+            {
+                //find closest target, only among the enemies
+                //instatnitate thinder strike
+                //setup thunder strike
+                if (GetComponent<Player>() != null)
+                    return;
 
-            fx.ShockFXFor(ailmentsDuration);
+                HitNearestTargetWithShockStrike();
+            }
+        }
+        //isIgnited = _ignite;
+        //isChilled = _chill;
+        //isShocked = _shock;
+    }
+
+    public void ApplyShock(bool _shock)
+    {
+        if (isShocked)
+            return;
+
+        shockedTimer = ailmentsDuration;
+        isShocked = _shock;
+
+        fx.ShockFXFor(ailmentsDuration);
+    }
+
+    private void HitNearestTargetWithShockStrike()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 25);
+
+        float closestDistance = Mathf.Infinity;
+        Transform closestEnemy = null;
+
+        foreach (var hit in colliders)
+        {
+            if (hit.GetComponent<Enemy>() != null && Vector2.Distance(transform.position, hit.transform.position) > 1)
+            {
+                float distanceToEnemy = Vector2.Distance(transform.position, hit.transform.position);
+
+                if (distanceToEnemy < closestDistance)
+                {
+                    closestDistance = distanceToEnemy;
+                    closestEnemy = hit.transform;
+                }
+            }
+
+            if (closestEnemy == null)       //delete if you dont want shocked target to be hit by shock strike
+                closestEnemy = transform;
         }
 
-        isIgnited = _ignite;
-        isChilled = _chill;
-        isShocked = _shock;
-    }
+        if (closestEnemy != null)
+        {
+            GameObject newShockStrike = Instantiate(shockStrikePrefabs, transform.position, Quaternion.identity);
+            newShockStrike.GetComponent<ShockStrike_Controller>().Setup(shockDamage, closestEnemy.GetComponent<CharacterStats>());
+        }
+    }   
 
 
     //thiet lap gia tri sat thuowng cho hieu ung dot chay
     public void SetupIgniteDamage(int _damage) => igniteDamage = _damage;
+
+    public void SetupShcokStrikeDamage(int _damage) => shockDamage = _damage;
 
 
     //Gay sat thuong cho nhan vat kiem tra xem nhan vat co chet khong
