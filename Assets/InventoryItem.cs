@@ -1,5 +1,5 @@
 using System;
-
+//InventoryItem: Lop nay dai dien cho 1 vat pham trong kho, bao bao gom du lieu cua vat pham (ItemData) va so luong ngan sep (stackSize).
 [Serializable]
 public class InventoryItem
 {
