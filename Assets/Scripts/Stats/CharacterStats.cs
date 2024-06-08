@@ -45,6 +45,7 @@ public class CharacterStats : MonoBehaviour
     public int currentHealth;       // mau hien tai
 
     public System.Action onHealthChanged;       // su kien khi mau thay doi
+    protected bool isDead;
 
     protected virtual void Start()
     {
@@ -70,18 +71,9 @@ public class CharacterStats : MonoBehaviour
 
         if (shockedTimer < 0)
             isShocked = false;
-
-        if (igniteDamageTimer < 0 && isIgnited)
-        {
-            Debug.Log("Take burn damage " + igniteDamage);
-
-            DecreaseHealthBy(igniteDamage);     // gay sat thuong do dot chay
-
-            if (currentHealth < 0)
-                Die();
-
-            igniteDamageTimer = igniteDamageCooldown;       // dat lai thoi gian cho gay sat thuong do dot chay
-        }
+        
+        if(isIgnited)
+            ApplyIgniteDamage();
     }
 
 
@@ -103,14 +95,13 @@ public class CharacterStats : MonoBehaviour
         }
 
         totalDamage = CheckTargetArmor(_targetStats, totalDamage);// tru giap cua muc tieu tu tong sat thuong
-        //_targetStats.TakeDamage(totalDamage);
+        _targetStats.TakeDamage(totalDamage);
 
         //if invnteroy current weapon has fire effect
-        // then 
-        DoMagicalDamage(_targetStats);// gay sat thuong phep
+        // then DoMagicalDamage(_targetStats);// gay sat thuong phep
     }
 
-
+    #region Magical damage and ailemnts
     //gay sat thuong phep len muc tieu va ap dung cac hieu ung phep thuat
     public virtual void DoMagicalDamage(CharacterStats _targetStats)
     {
@@ -127,6 +118,11 @@ public class CharacterStats : MonoBehaviour
         if (Mathf.Max(_fireDamage, _iceDamage, _lightingDamage) <= 0)
             return; // neu khong co sat thuong thi thoat ham
 
+        AttemptyToApplyAilements(_targetStats, _fireDamage, _iceDamage, _lightingDamage);
+    }
+
+    private void AttemptyToApplyAilements(CharacterStats _targetStats, int _fireDamage, int _iceDamage, int _lightingDamage)
+    {
         bool canApplyIgnite = _fireDamage > _iceDamage && _fireDamage > _lightingDamage; // kiem tra ap dung hieu ung dot chay
         bool canApplyChill = _iceDamage > _fireDamage && _iceDamage > _lightingDamage; // kiem tra ap dung hieu ung bang
         bool canApplyShock = _lightingDamage > _fireDamage && _lightingDamage > _iceDamage; // kiem tra ap dung hieu ung shock
@@ -162,22 +158,10 @@ public class CharacterStats : MonoBehaviour
             _targetStats.SetupIgniteDamage(Mathf.RoundToInt(_fireDamage * .2f)); // thiet lap sat thuong dot chay
 
         if (canApplyShock)
-            _targetStats.SetupShcokStrikeDamage(Mathf.RoundToInt(_lightingDamage * .1f)); //damage set
+            _targetStats.SetupShockStrikeDamage(Mathf.RoundToInt(_lightingDamage * .1f)); //damage set
 
         _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock); // ap dung hieu ung
     }
-
-
-    //kiem tra khang phep cua muc tieu va dieu chinh tong sat thuong phep duwa tren khang phep va tri tue cua muc tieu
-    private static int CheckTargetResistance(CharacterStats _targetStats, int totalMagicalDamage)
-    {
-        // Tru khang phep cua muc tieu va chi so tri tue nhan 3 tu tong sat thuong phep
-        totalMagicalDamage -= _targetStats.magicResistance.GetValue() + (_targetStats.intelgence.GetValue() * 3);
-
-        totalMagicalDamage = Mathf.Clamp(totalMagicalDamage, 0, int.MaxValue);// gioi han tong sat thuong phep khong nho hon 0
-        return totalMagicalDamage;// tra ve tong sat thuong phep
-    }
-
 
     //Ap dung hieu ung dot chay,lam lanh ,sock len nhan vat
     public void ApplyAilments(bool _ignite, bool _chill, bool _shock)
@@ -266,23 +250,37 @@ public class CharacterStats : MonoBehaviour
             GameObject newShockStrike = Instantiate(shockStrikePrefabs, transform.position, Quaternion.identity);
             newShockStrike.GetComponent<ShockStrike_Controller>().Setup(shockDamage, closestEnemy.GetComponent<CharacterStats>());
         }
-    }   
+    }
 
+    private void ApplyIgniteDamage()
+    {
+        if (igniteDamageTimer < 0)
+        {
+            // Debug.Log("Take burn damage " + igniteDamage);
+            DecreaseHealthBy(igniteDamage);     // gay sat thuong do dot chay
+
+            if (currentHealth < 0 && !isDead)
+                Die();
+
+            igniteDamageTimer = igniteDamageCooldown;       // dat lai thoi gian cho gay sat thuong do dot chay
+        }
+    }
 
     //thiet lap gia tri sat thuowng cho hieu ung dot chay
     public void SetupIgniteDamage(int _damage) => igniteDamage = _damage;
 
-    public void SetupShcokStrikeDamage(int _damage) => shockDamage = _damage;
-
+    public void SetupShockStrikeDamage(int _damage) => shockDamage = _damage;
+    #endregion
 
     //Gay sat thuong cho nhan vat kiem tra xem nhan vat co chet khong
     public virtual void TakeDamage(int _damage)
     {
         DecreaseHealthBy(_damage);
+        GetComponent<Entity>().DamageImpact();
+        fx.StartCoroutine("FlashFX");
+        // Debug.Log(_damage);
 
-        Debug.Log(_damage);
-
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
             Die();
     }
 
@@ -299,10 +297,11 @@ public class CharacterStats : MonoBehaviour
     protected virtual void Die()
     {
         Debug.Log("Die");
-        //throw new NotImplementedException();
+        isDead = true;
     }
 
 
+    #region Stay caculations
     //kiem tra giap cua muc tieu va giam sat thuong tuong ung
     private int CheckTargetArmor(CharacterStats _targetStats, int totalDamage)
     {
@@ -315,6 +314,15 @@ public class CharacterStats : MonoBehaviour
         return totalDamage;
     }
 
+    //kiem tra khang phep cua muc tieu va dieu chinh tong sat thuong phep duwa tren khang phep va tri tue cua muc tieu
+    private int CheckTargetResistance(CharacterStats _targetStats, int totalMagicalDamage)
+    {
+        // Tru khang phep cua muc tieu va chi so tri tue nhan 3 tu tong sat thuong phep
+        totalMagicalDamage -= _targetStats.magicResistance.GetValue() + (_targetStats.intelgence.GetValue() * 3);
+
+        totalMagicalDamage = Mathf.Clamp(totalMagicalDamage, 0, int.MaxValue);// gioi han tong sat thuong phep khong nho hon 0
+        return totalMagicalDamage;// tra ve tong sat thuong phep
+    }
 
     //kiem tra muc tieu xem co the ne tranh don tan cong khong
     private bool TargetCanAvoidAttack(CharacterStats _targetStats)
@@ -366,4 +374,5 @@ public class CharacterStats : MonoBehaviour
     {
         return maxHealth.GetValue() + vitality.GetValue() * 5;
     }
+    #endregion
 }

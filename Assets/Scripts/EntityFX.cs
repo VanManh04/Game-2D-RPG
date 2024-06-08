@@ -21,6 +21,15 @@ public class EntityFX : MonoBehaviour
         originalMat = sr.material;
     }
 
+    // doi mau sac cua entity
+    public void Maketransprent(bool _transprent)
+    {
+        if (_transprent)
+            sr.color = Color.clear;
+        else
+            sr.color = Color.white;
+    }
+
     private IEnumerator FlashFX()
     {
         sr.material = hitMat;

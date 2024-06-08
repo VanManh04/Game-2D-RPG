@@ -65,9 +65,8 @@ public class Entity : MonoBehaviour
     }
 
     //goi khi entity bo tan cong va bat FX...
-    public virtual void DamageEffect()
+    public virtual void DamageImpact()
     {
-        fx.StartCoroutine("FlashFX");
         StartCoroutine("HitKnockback");
         //Debug.Log(gameObject.name + " was damaged!");
     }
@@ -133,15 +132,6 @@ public class Entity : MonoBehaviour
         FlipController(_xVelocity);
     }
     #endregion
-
-    // doi mau sac cua entity
-    public void Maketransprent(bool _transprent)
-    {
-        if (_transprent)
-            sr.color = Color.clear;
-        else
-            sr.color = Color.white;
-    }
 
     public virtual void Die()
     {
