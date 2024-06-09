@@ -1445,7 +1445,7 @@ GameObject:
   - component: {fileID: 297077840}
   - component: {fileID: 297077839}
   m_Layer: 0
-  m_Name: Item object - Nice armor
+  m_Name: Item object - Plate armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

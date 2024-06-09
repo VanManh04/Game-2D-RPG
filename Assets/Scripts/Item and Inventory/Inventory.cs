@@ -53,9 +53,9 @@ public class Inventory : MonoBehaviour
         InventoryItem newItem = new InventoryItem(newEquipment);
 
         ItemData_Equipment oldEquipment = null;
-        foreach (KeyValuePair<ItemData_Equipment,InventoryItem> item in equipmentDictionary)
+        foreach (KeyValuePair<ItemData_Equipment,InventoryItem> item in equipmentDictionary) // lap ItemData_Equipment = Key InventoryItem = value
         {
-            if (item.Key.equipmentType == newEquipment.equipmentType)
+            if (item.Key.equipmentType == newEquipment.equipmentType)// neu co kieu bang nhau thi co the thay doi vu khi vi du cung la weapon
                 oldEquipment = item.Key;
         }
 
@@ -67,6 +67,7 @@ public class Inventory : MonoBehaviour
 
         equipment.Add(newItem);
         equipmentDictionary.Add(newEquipment, newItem);
+        newEquipment.AddModifiers();
 
         RemoveItem(_item);
         UpdateSlotUI();
@@ -78,6 +79,7 @@ public class Inventory : MonoBehaviour
         {
             equipment.Remove(value);
             equipmentDictionary.Remove(itemToRemove);
+            itemToRemove.RemoveModifiers();
         }
     }
 
