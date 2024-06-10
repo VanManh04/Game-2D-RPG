@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 //EquipmentType dinh nghia cac loai trang bi co the co trong tro choi,bao gom Weapon(vu khi), Armor(Giap),Amulet,Flask(Binh thuoc)
 public enum EquipmentType
@@ -34,6 +35,9 @@ public class ItemData_Equipment : ItemData
     public int fireDamage;     //sat thuong lua
     public int iceDamage;      //sat thuong bang
     public int lightingDamage; //sat thuong shock
+
+    [Header("Craft requirements")]
+    public List<InventoryItem> craftingMaterials;
 
     public void AddModifiers()
     {
