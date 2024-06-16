@@ -170,7 +170,7 @@ public class Inventory : MonoBehaviour
 
         if (stashDictianory.TryGetValue(_item, out InventoryItem stashValue))
         {
-            if (value.stackSize <= 1)
+            if (stashValue.stackSize <= 1)
             {
                 stash.Remove(stashValue);
                 stashDictianory.Remove(_item);
@@ -190,13 +190,14 @@ public class Inventory : MonoBehaviour
         {
             if (stashDictianory.TryGetValue(_requiredMaterial[i].data, out InventoryItem stashValue))
             {
-                if (stashValue.stackSize <= _requiredMaterial[i].stackSize)
+                if (stashValue.stackSize < _requiredMaterial[i].stackSize)
                 {
                     Debug.Log("Not enough materials");
                     return false;
                 }
                 else
                 {
+                    Debug.Log(stashValue.data.name);
                     materialsToRemove.Add(stashValue);
                 }
             }
