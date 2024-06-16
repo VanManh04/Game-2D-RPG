@@ -45,7 +45,7 @@ public class CharacterStats : MonoBehaviour
     public int currentHealth;       // mau hien tai
 
     public System.Action onHealthChanged;       // su kien khi mau thay doi
-    protected bool isDead;
+    public bool isDead {  get; private set; }
 
     protected virtual void Start()
     {
