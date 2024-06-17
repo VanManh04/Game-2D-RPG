@@ -23,6 +23,8 @@ public class PlayerAnimationTriggers : MonoBehaviour
                 EnemyStats _targer = hit.GetComponent<EnemyStats>();
                 player.stats.DoDamage(_targer);
 
+                //inventory get wearpon call item effect
+                Inventory.instance.GetEquipment(EquipmentType.Weapon).ExecuteItemEffect();
                 //hit.GetComponent<Enemy>().Damage();
                 //hit.GetComponent<CharacterStats>().TakeDamage(player.stats.damage.GetValue());
 
