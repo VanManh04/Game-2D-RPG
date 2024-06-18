@@ -77,6 +77,11 @@ public class Crystal_Skill_Controller : MonoBehaviour
             {
                 player.stats.DoMagicalDamage(hit.GetComponent<CharacterStats>());
                 //hit.GetComponent<Enemy>().DamageEffect();
+
+                ItemData_Equipment equipedAmiler = Inventory.instance.GetEquipment(EquipmentType.Amulet);
+
+                if (equipedAmiler != null)
+                    equipedAmiler.Effect(hit.transform);
             }
         }
     }

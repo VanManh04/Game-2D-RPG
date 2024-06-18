@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
@@ -133,7 +134,7 @@ public class Sword_Skill_Controller : MonoBehaviour
             {
                 spinTimer -= Time.deltaTime;
 
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + spinDirection, transform.position.y), 1.5f * Time.deltaTime);
+                //transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + spinDirection, transform.position.y), 1.5f * Time.deltaTime);
 
                 if (spinTimer < 0)
                 {
@@ -214,6 +215,12 @@ public class Sword_Skill_Controller : MonoBehaviour
     {
         player.stats.DoDamage(enemy.GetComponent<CharacterStats>()); //enemy.DamageEffect();
         enemy.StartCoroutine("FreezeTimerFor", freezeTimeDuration);
+
+
+        ItemData_Equipment equipedAmiler = Inventory.instance.GetEquipment(EquipmentType.Amulet);
+
+        if (equipedAmiler != null)
+            equipedAmiler.Effect(enemy.transform);
     }
 
     //Thiết lập mục tiêu cho tính năng nảy.
