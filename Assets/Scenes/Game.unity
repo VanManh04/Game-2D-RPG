@@ -2843,7 +2843,7 @@ MonoBehaviour:
     baseValue: 10
     modifiers: 
   damage:
-    baseValue: 100
+    baseValue: 1
     modifiers: 
   critChance:
     baseValue: 99
