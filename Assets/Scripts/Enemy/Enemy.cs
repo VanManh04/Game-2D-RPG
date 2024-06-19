@@ -60,6 +60,8 @@ public class Enemy : Entity
         moveSpeed = defaultMoveSpeed;
     }
 
+    public virtual void FreezeTimeFor(float _duration) => StartCoroutine(FreezeTimerCoroutine(_duration));
+
     public virtual void FreezeTime(bool _timeFrozen)
     {
         if (_timeFrozen)
@@ -73,7 +75,7 @@ public class Enemy : Entity
         }
     }
 
-    protected virtual IEnumerator FreezeTimerFor(float _seconds)
+    protected virtual IEnumerator FreezeTimerCoroutine(float _seconds)
     {
         FreezeTime(true);
 
