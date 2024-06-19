@@ -1,5 +1,22 @@
 ﻿using System.Collections;
 using UnityEngine;
+public enum StatType
+{
+    strength,
+    agility,
+    intelegence,
+    vitality,
+    damage,
+    critChance,
+    critPower,
+    health,
+    armor,
+    evasion,
+    magicRes,
+    fireDamage,
+    iceDamage,
+    lightingDamage
+}
 
 public class CharacterStats : MonoBehaviour
 {
@@ -46,7 +63,7 @@ public class CharacterStats : MonoBehaviour
     public int currentHealth;       // mau hien tai
 
     public System.Action onHealthChanged;       // su kien khi mau thay doi
-    public bool isDead {  get; private set; }
+    public bool isDead { get; private set; }
 
     protected virtual void Start()
     {
@@ -72,8 +89,8 @@ public class CharacterStats : MonoBehaviour
 
         if (shockedTimer < 0)
             isShocked = false;
-        
-        if(isIgnited)
+
+        if (isIgnited)
             ApplyIgniteDamage();
     }
 
@@ -400,4 +417,38 @@ public class CharacterStats : MonoBehaviour
         return maxHealth.GetValue() + vitality.GetValue() * 5;
     }
     #endregion
+
+    public Stat GetStat(StatType _statsType)
+    {
+        if (_statsType == StatType.strength)
+            return strength;
+        else if (_statsType == StatType.agility)
+            return agility;
+        else if (_statsType == StatType.intelegence)
+            return intelgence;
+        else if (_statsType == StatType.vitality)
+            return vitality;
+        else if (_statsType == StatType.damage)
+            return damage;
+        else if (_statsType == StatType.critChance)
+            return critChance;
+        else if (_statsType == StatType.critPower)
+            return critPower;
+        else if (_statsType == StatType.health)
+            return maxHealth;
+        else if (_statsType == StatType.armor)
+            return armor;
+        else if (_statsType == StatType.evasion)
+            return evasion;
+        else if (_statsType == StatType.magicRes)
+            return magicResistance;
+        else if (_statsType == StatType.fireDamage)
+            return fireDamage;
+        else if (_statsType == StatType.iceDamage)
+            return iceDamage;
+        else if (_statsType == StatType.lightingDamage)
+            return lightingDamage;
+
+        return null;
+    }
 }
