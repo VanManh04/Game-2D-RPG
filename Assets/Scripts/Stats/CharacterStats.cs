@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -76,6 +77,18 @@ public class CharacterStats : MonoBehaviour
             ApplyIgniteDamage();
     }
 
+    //add 1 cai gi do sau vai giay thi xoa vi du nhu damage
+    public virtual void IncreaseStatBy(int _modifier, float _duration, Stat _statToModifly)
+    {
+        StartCoroutine(StatModCoroutine(_modifier, _duration, _statToModifly));
+    }
+
+    private IEnumerator StatModCoroutine(int modifier, float duration, Stat statToModifly)
+    {
+        statToModifly.AddModifier(modifier);
+        yield return new WaitForSeconds(duration);
+        statToModifly.RemoveModifier(modifier);
+    }
 
     //gay sat thuong vat ly cho muc tieu
     public virtual void DoDamage(CharacterStats _targetStats)
@@ -98,7 +111,8 @@ public class CharacterStats : MonoBehaviour
         _targetStats.TakeDamage(totalDamage);
 
         //if invnteroy current weapon has fire effect
-        // then DoMagicalDamage(_targetStats);// gay sat thuong phep
+        // then
+        DoMagicalDamage(_targetStats);// xoa neu khong muon su dung phep thuat
     }
 
     #region Magical damage and ailemnts
@@ -284,8 +298,19 @@ public class CharacterStats : MonoBehaviour
             Die();
     }
 
+    public virtual void IncreaseHealthBy(int _amount)
+    {
+        currentHealth += _amount;
 
-    //Giamr mau hien tai cua nhan vat
+        if (currentHealth > GetMaxHealthValue())
+            currentHealth = GetMaxHealthValue();
+
+        //cap nhat UI
+        if (onHealthChanged != null)
+            onHealthChanged();
+    }
+
+    //Giam mau hien tai cua nhan vat
     protected virtual void DecreaseHealthBy(int _damage)
     {
         currentHealth -= _damage;

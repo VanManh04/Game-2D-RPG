@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03b5f3406b7b9c7448c621fc103ee73a, type: 3}
-  m_Name: Ice anf Fire
+  m_Name: Fire flask
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: Ice anf Fire
-  icon: {fileID: 1398721256, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
-  dropChance: 6.2
-  equipmentType: 0
+  itemName: Fire flask
+  icon: {fileID: 1073501139, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  dropChance: 0
+  equipmentType: 3
+  itemCooldown: 0
   itemEffects:
-  - {fileID: 11400000, guid: 02925a9c3eef8cc48a7333b12b0aacf4, type: 2}
+  - {fileID: 11400000, guid: e86eeb7f3054f4f4e917f4ac65338174, type: 2}
   strength: 0
   agility: 0
   intelgence: 0
@@ -30,7 +31,7 @@ MonoBehaviour:
   armor: 0
   evasion: 0
   magicResistance: 0
-  fireDamage: 5
-  iceDamage: 5
+  fireDamage: 0
+  iceDamage: 0
   lightingDamage: 0
   craftingMaterials: []

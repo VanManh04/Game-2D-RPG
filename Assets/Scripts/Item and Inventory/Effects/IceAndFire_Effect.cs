@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Ice and fire effect", menuName = "Data/Item effect/Ice and fire")]
-public class IceAndFire : ItemEffect
+public class IceAndFire_Effect : ItemEffect
 {
     [SerializeField] private GameObject iceAndFirePrefabs;
     [SerializeField] private float xVelociry;
