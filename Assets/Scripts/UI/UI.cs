@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class UI : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject characterUI;
+
+    public UI_ItemTooltip itemTooltip;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         
