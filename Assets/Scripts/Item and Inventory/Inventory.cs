@@ -146,7 +146,7 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(ItemData _item)
     {
-        if (_item.itemType == ItemType.Equipment)//add type Equipment
+        if (_item.itemType == ItemType.Equipment && CanAddItem())//add type Equipment
             AddToInventory(_item);
         else if (_item.itemType == ItemType.Material)
             AddToStash(_item);
@@ -207,6 +207,17 @@ public class Inventory : MonoBehaviour
         }
 
         UpdateSlotUI();
+    }
+
+    public bool CanAddItem()
+    {
+        if (inventory.Count >= inventoryItemSlot.Length)
+        {
+            Debug.Log("No more space");
+            return false;
+        }
+
+        return true;
     }
 
     public bool CanCraft(ItemData_Equipment _itemToCraft, List<InventoryItem> _requiredMaterial)
