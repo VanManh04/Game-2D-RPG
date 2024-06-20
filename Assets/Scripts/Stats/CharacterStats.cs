@@ -26,7 +26,7 @@ public class CharacterStats : MonoBehaviour
     public Stat strength; //1 point increase damage by 1 and crit.power by 1% (1đ -> damage+1, chi mang +1)
     public Stat agility; //1 point increase evasion by 1% and crit.chance by 1% (1 diem tang ne tranh them 1% va co hoi chi mang len 1%)
     public Stat intelgence;// 1 point increase magic damage by 1 and magic resistance by 3  (1 diem tang sat thuong them 1 va khang phep them 3 3)
-    public Stat vitality;//1 point increase health by 3 or 5 points (1 diem tang mau tu 3 - 5 don vi)
+    public Stat vitality;//1 point increase health by 5 points (1 diem tang mau tu 5 don vi)
 
     [Header("Offensive stats")]
     public Stat damage;     //tong sat thuong
