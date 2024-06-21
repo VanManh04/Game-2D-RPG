@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03b5f3406b7b9c7448c621fc103ee73a, type: 3}
-  m_Name: Amulet of God
+  m_Name: The book
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: Amulet of Gd
-  icon: {fileID: -245851270, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemName: The book
+  icon: {fileID: -1985898824, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   dropChance: 0
   equipmentType: 2
   itemCooldown: 0
-  itemEffects:
-  - {fileID: 11400000, guid: e1e30e28e4ee9f04088c6e098bee63b4, type: 2}
+  itemEffects: []
   strength: 0
   agility: 0
   intelligence: 0
@@ -30,12 +29,8 @@ MonoBehaviour:
   health: 0
   armor: 0
   evasion: 0
-  magicResistance: 15
+  magicResistance: 0
   fireDamage: 0
-  iceDamage: 0
-  lightingDamage: 10
-  craftingMaterials:
-  - data: {fileID: 11400000, guid: e7135bc2a89219947bb194e9f207d84e, type: 2}
-    stackSize: 5
-  - data: {fileID: 11400000, guid: 717d8b69a635ba4408199b1026b0d927, type: 2}
-    stackSize: 5
+  iceDamage: 15
+  lightingDamage: 0
+  craftingMaterials: []

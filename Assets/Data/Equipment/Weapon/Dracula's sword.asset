@@ -22,16 +22,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 58d4b23e5d0e18445950d6b1c26abc4c, type: 2}
   strength: 0
   agility: 0
-  intelgence: 0
+  intelligence: 0
   vitality: 0
   damage: 15
   critChance: 15
   critPower: 0
-  maxHealth: 0
+  health: 0
   armor: 0
   evasion: 0
   magicResistance: 25
   fireDamage: 0
   iceDamage: 0
   lightingDamage: 0
-  craftingMaterials: []
+  craftingMaterials:
+  - data: {fileID: 11400000, guid: 717d8b69a635ba4408199b1026b0d927, type: 2}
+    stackSize: 1
+  - data: {fileID: 11400000, guid: 717d8b69a635ba4408199b1026b0d927, type: 2}
+    stackSize: 2
+  - data: {fileID: 11400000, guid: e7135bc2a89219947bb194e9f207d84e, type: 2}
+    stackSize: 3

@@ -25,7 +25,7 @@ public class UI_ItemTooltip : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    public void HideToopTio()
+    public void HideToopTip()
     {
         itemNameText.fontSize = defaultFontSize;
         gameObject.SetActive(false);
