@@ -66,15 +66,15 @@ public class UI_SkillTreeSlot : MonoBehaviour, IPointerEnterHandler, IPointerExi
         float xOffset = 0;
         float yOffset = 0;
 
-        if (mousePosition.x > 743)
-            xOffset = -150;
+        if (mousePosition.x > 1044)
+            xOffset = -200;
         else
-            xOffset = 150;
+            xOffset = 200;
 
-        if (mousePosition.y > 1207)
-            yOffset = -150;
+        if (mousePosition.y > 600)
+            yOffset = -200;
         else
-            yOffset = 150;
+            yOffset = 200;
 
         ui.skillTooltip.transform.position = new Vector2(mousePosition.x + xOffset, mousePosition.y + yOffset);
     }

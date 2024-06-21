@@ -14,8 +14,11 @@ public class ItemData_Equipment : ItemData
 {
     public EquipmentType equipmentType;
 
+    [Header("Unique eddect")]
     public float itemCooldown;
     public ItemEffect[] itemEffects;
+    [TextArea]
+    public string itemEffectDesctiption;
 
     [Header("Major stats")]
     public int strength; //1 point increase damage by 1 and crit.power by 1% (1? -> damage+1, chi mang +1)
@@ -123,11 +126,17 @@ public class ItemData_Equipment : ItemData
 
         if (descriptionLength < 5)
         {
-            for (int i = 0; i < 5-descriptionLength; i++)
+            for (int i = 0; i < 5 - descriptionLength; i++)
             {
                 sb.AppendLine();
                 sb.Append("");
             }
+        }
+
+        if (itemEffectDesctiption.Length > 0)
+        {
+            sb.AppendLine();
+            sb.Append(itemEffectDesctiption);
         }
 
         return sb.ToString();
@@ -143,7 +152,7 @@ public class ItemData_Equipment : ItemData
             if (_value > 0)
                 sb.Append("+ " + _value + " " + _name + ".");
 
-            descriptionLength ++;
+            descriptionLength++;
         }
     }
 }
