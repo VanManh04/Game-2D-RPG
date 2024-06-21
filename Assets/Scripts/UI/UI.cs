@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UI : MonoBehaviour
@@ -12,12 +10,14 @@ public class UI : MonoBehaviour
     public UI_ItemTooltip itemTooltip;
     public UI_StatToolTip statToolTip;
     public UI_CraftWindow craftWindow;
+    public UI_SkillToolTip skillTooltip;
 
     void Start()
     {
         SwitchTo(null);
         itemTooltip.gameObject.SetActive(false);
         statToolTip.gameObject.SetActive(false);
+        skillTooltip.gameObject.SetActive(false);
     }
 
     void Update()
@@ -45,7 +45,7 @@ public class UI : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(false);
         }
 
-        if(_menu != null)
+        if (_menu != null)
             _menu.SetActive(true);
     }
 
