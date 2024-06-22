@@ -366,6 +366,11 @@ public class CharacterStats : MonoBehaviour
         return totalMagicalDamage;// tra ve tong sat thuong phep
     }
 
+    public virtual void OnEvasion()
+    {
+
+    }
+
     //kiem tra muc tieu xem co the ne tranh don tan cong khong
     private bool TargetCanAvoidAttack(CharacterStats _targetStats)
     {
@@ -377,6 +382,7 @@ public class CharacterStats : MonoBehaviour
         if (Random.Range(0, 100) < totalEvasion)
         {
             //Debug.Log("ATTACK AVOIDED");
+            _targetStats.OnEvasion();
             return true;// don tan cong bi tranh
         }
 

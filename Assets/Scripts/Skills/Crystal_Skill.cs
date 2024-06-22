@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +10,7 @@ public class Crystal_Skill : Skill
 
     [Header("Crystal simple")]
     [SerializeField] private UI_SkillTreeSlot unlockCrystalButton;
-    public bool crystalUnlocked {  get; private set; }
+    public bool crystalUnlocked { get; private set; }
 
     [Header("Crystal mirage")]
     [SerializeField] private UI_SkillTreeSlot unlockCloneInstaedButton;
@@ -50,7 +48,7 @@ public class Crystal_Skill : Skill
     #region Unlock Skill region
     private void UnlockCrystal()
     {
-        if(unlockCrystalButton.unlocked)
+        if (unlockCrystalButton.unlocked)
             crystalUnlocked = true;
     }
 
@@ -62,7 +60,7 @@ public class Crystal_Skill : Skill
 
     private void UnlockExplosiveCrystal()
     {
-        if(unlockExplosiveButton.unlocked)
+        if (unlockExplosiveButton.unlocked)
             canExplode = true;
     }
 
@@ -79,7 +77,7 @@ public class Crystal_Skill : Skill
             canUseMultiStacks = true;
     }
 
-#endregion
+    #endregion
 
     public override void UseSkill()
     {
@@ -105,15 +103,16 @@ public class Crystal_Skill : Skill
 
             if (cloneInsteadOfCrystal)
             {
-                SkillManager.instance.clone.CreateClone(currentCrystal.transform,Vector3.zero);
+                SkillManager.instance.clone.CreateClone(currentCrystal.transform, Vector3.zero);
                 Destroy(currentCrystal);
-            }else
+            }
+            else
             {
                 currentCrystal.GetComponent<Crystal_Skill_Controller>()?.FinishCrystal();
             }
 
             currentCrystal.GetComponent<Crystal_Skill_Controller>()?.FinishCrystal();
-        } 
+        }
     }
 
     public void CreateCrystal()
@@ -137,7 +136,7 @@ public class Crystal_Skill : Skill
 
                 cooldown = 0;
                 GameObject crystalToSpawn = crystalLeft[crystalLeft.Count - 1];
-                GameObject newCrystal = Instantiate(crystalToSpawn,player.transform.position, Quaternion.identity);
+                GameObject newCrystal = Instantiate(crystalToSpawn, player.transform.position, Quaternion.identity);
 
                 crystalLeft.Remove(crystalToSpawn);
 
