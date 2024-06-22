@@ -20,14 +20,15 @@ MonoBehaviour:
   itemCooldown: 5
   itemEffects:
   - {fileID: 11400000, guid: 95eaefc2c2128d34782efd9575c44525, type: 2}
+  itemEffectDesctiption: Heals for 30% of health Cooldown 15 sec.
   strength: 0
   agility: 0
-  intelgence: 0
+  intelligence: 0
   vitality: 0
   damage: 0
   critChance: 0
   critPower: 0
-  maxHealth: 0
+  health: 0
   armor: 0
   evasion: 0
   magicResistance: 0

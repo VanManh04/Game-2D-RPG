@@ -102,6 +102,8 @@ public class Sword_Skill_Controller : MonoBehaviour
         //rb.isKinematic = false;
         transform.parent = null;
         isReturning = true;
+
+        //sword.skill.setcooldown
     }
 
     private void Update()
