@@ -21083,10 +21083,15 @@ MonoBehaviour:
   cooldown: 0
   crystalDuration: 1.5
   crystalPrefab: {fileID: 665214787059351132, guid: 7aa56397d97af17489d72130e48ba8a4, type: 3}
+  unlockCrystalButton: {fileID: 1786513322}
+  unlockCloneInstaedButton: {fileID: 2110848790}
   cloneInsteadOfCrystal: 0
+  unlockExplosiveButton: {fileID: 122609117}
   canExplode: 0
+  unlockMovingCrystalButton: {fileID: 1215219658}
   canMoveToEnemy: 0
   moveSpeed: 5
+  unlockMultiStackButton: {fileID: 1913109773}
   canUseMultiStacks: 0
   amountOfStacks: 3
   multiStackCooldown: 4
