@@ -64,6 +64,7 @@ public class CharacterStats : MonoBehaviour
 
     public System.Action onHealthChanged;       // su kien khi mau thay doi
     public bool isDead { get; private set; }
+    private bool isVulnerable;
 
     protected virtual void Start()
     {
@@ -92,6 +93,17 @@ public class CharacterStats : MonoBehaviour
 
         if (isIgnited)
             ApplyIgniteDamage();
+    }
+
+    public void MakeVulnerableFor(float _duration) => StartCoroutine(VulnerableForCorutine(_duration));
+
+    private IEnumerator VulnerableForCorutine(float _duartion)
+    {
+        isVulnerable = true;
+
+        yield return new WaitForSeconds(_duartion);
+
+        isVulnerable = false;
     }
 
     //add 1 cai gi do sau vai giay thi xoa vi du nhu damage
@@ -330,6 +342,9 @@ public class CharacterStats : MonoBehaviour
     //Giam mau hien tai cua nhan vat
     protected virtual void DecreaseHealthBy(int _damage)
     {
+        if (isVulnerable)
+            _damage = Mathf.RoundToInt(_damage * 1.1f);
+
         currentHealth -= _damage;
 
         if (onHealthChanged != null)
