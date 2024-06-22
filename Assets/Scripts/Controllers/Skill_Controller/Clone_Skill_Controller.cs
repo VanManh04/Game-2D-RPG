@@ -10,6 +10,7 @@ public class Clone_Skill_Controller : MonoBehaviour
     [SerializeField] private float colorLoosingSpeed;
 
     private float cloneTimer;
+    private float attackMultiplier;
     [SerializeField] private Transform attackCheck;
     [SerializeField] private float attackCheckRadius = .8f;
     private Transform closestEnemy;
@@ -38,13 +39,14 @@ public class Clone_Skill_Controller : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void SetupClone(Transform _newTrabsform,float _cloneDuration,bool _canAttack,Vector3 _offset,Transform _closestEnemy,bool _canDulicateClone,float _chanceToDuplicate,Player _player)
+    public void SetupClone(Transform _newTrabsform,float _cloneDuration,bool _canAttack,Vector3 _offset,Transform _closestEnemy,bool _canDulicateClone,float _chanceToDuplicate,Player _player, float _attackMultiplier)
     {
         anim = GetComponent<Animator>();
 
         if (_canAttack)
             anim.SetInteger("AttackNumber", Random.Range(1, 3));
 
+        attackMultiplier = _attackMultiplier;
         transform.position = _newTrabsform.position + _offset;
         cloneTimer = _cloneDuration;
 
@@ -68,8 +70,20 @@ public class Clone_Skill_Controller : MonoBehaviour
         {
             if (hit.GetComponent<Enemy>() != null)
             {
-                player.stats.DoDamage(hit.GetComponent<CharacterStats>());
+                //player.stats.DoDamage(hit.GetComponent<CharacterStats>());
                 //hit.GetComponent<Enemy>().DamageEffect();
+                PlayerStats playerStats = player.GetComponent<PlayerStats>();
+                EnemyStats enemyStats = hit.GetComponent<EnemyStats>();
+
+                playerStats.CloneDoDamage(enemyStats, attackMultiplier);
+
+                if (player.skill.clone.canApplyOnHitEffect)
+                {
+                    ItemData_Equipment weaponData = Inventory.instance.GetEquipment(EquipmentType.Weapon);
+
+                    if (weaponData != null)
+                        weaponData.Effect(hit.transform);
+                }
 
                 if (canDulicateClone)
                 {

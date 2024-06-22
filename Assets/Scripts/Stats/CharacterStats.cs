@@ -360,7 +360,7 @@ public class CharacterStats : MonoBehaviour
 
     #region Stay caculations
     //kiem tra giap cua muc tieu va giam sat thuong tuong ung
-    private int CheckTargetArmor(CharacterStats _targetStats, int totalDamage)
+    protected int CheckTargetArmor(CharacterStats _targetStats, int totalDamage)
     {
         if (_targetStats.isChilled)
             totalDamage -= Mathf.RoundToInt(_targetStats.armor.GetValue() * .8f); // muc tieu bi lam lanh thi giam giap cua muc tieu
@@ -387,7 +387,7 @@ public class CharacterStats : MonoBehaviour
     }
 
     //kiem tra muc tieu xem co the ne tranh don tan cong khong
-    private bool TargetCanAvoidAttack(CharacterStats _targetStats)
+    protected bool TargetCanAvoidAttack(CharacterStats _targetStats)
     {
         int totalEvasion = _targetStats.evasion.GetValue() + _targetStats.agility.GetValue();// tong ne tranh = ne tranh co ban + nhanh nhen
 
@@ -406,7 +406,7 @@ public class CharacterStats : MonoBehaviour
 
 
     //Kiem tra don tam cong co the gay sat thuong chi mang hay khon
-    private bool CanCrit()
+    protected bool CanCrit()
     {
         int totalCriticalChance = critChance.GetValue() + agility.GetValue();// tong co hoi chi mang = co hoi chi mang co ban + nhanh nhen
 
@@ -419,7 +419,7 @@ public class CharacterStats : MonoBehaviour
 
 
     //Tinh toan sat thuong chi mang
-    private int CalculateCritucalDamage(int _damage)
+    protected int CalculateCritucalDamage(int _damage)
     {
         float totalCritPower = (critPower.GetValue() + strength.GetValue()) * .01f;// tinh tong suc manh chi mang
 
