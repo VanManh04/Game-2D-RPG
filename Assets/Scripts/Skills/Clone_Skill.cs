@@ -10,12 +10,12 @@ public class Clone_Skill : Skill
     [SerializeField] private float cloneDuration;
     [Space]
     [SerializeField] private bool canAttack;
-    [SerializeField] private bool createClonOndashStart;
-    [SerializeField] private bool createCloneOnDashOver;
     [SerializeField] private bool canCreateCloneOnCounterAttack;
+
     [Header("Clone can duplicate")]
     [SerializeField] private bool canDuplivcateClone;
     [SerializeField] private float chanceToDuplicate;
+
     [Header("Crystal instead of clone")]
     public bool crystalInseadOfClone;
 
@@ -32,18 +32,6 @@ public class Clone_Skill : Skill
 
         newClone.GetComponent<Clone_Skill_Controller>().
             SetupClone(_clonePosition,cloneDuration,canAttack,_offset,FindClosestEnemy(newClone.transform),canDuplivcateClone,chanceToDuplicate,player);
-    }
-
-    public void CreateCloneOnDashStart()
-    {
-        if (createClonOndashStart)
-            CreateClone(player.transform, Vector3.zero);
-    }
-
-    public void CreateCloneOnDashOver()
-    {
-        if (createCloneOnDashOver)
-            CreateClone(player.transform, Vector3.zero);
     }
 
     public void CreateCloneOnCounterAttack(Transform _enemyTransform)
