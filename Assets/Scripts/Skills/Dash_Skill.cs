@@ -34,6 +34,13 @@ public class Dash_Skill : Skill
         Debug.Log("Created clone behind");
     }
 
+    protected override void CheckUnlock()
+    {
+        UnlockDash();
+        UnlockCloneOnDash();
+        UnlockCloneOnArrival();
+    }
+
     private void UnlockDash()
     {
         //Debug.Log("Attemtpt to lock dash");
