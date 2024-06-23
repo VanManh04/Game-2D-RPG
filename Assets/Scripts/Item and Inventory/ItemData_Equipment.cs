@@ -17,8 +17,6 @@ public class ItemData_Equipment : ItemData
     [Header("Unique eddect")]
     public float itemCooldown;
     public ItemEffect[] itemEffects;
-    [TextArea]
-    public string itemEffectDesctiption;
 
     [Header("Major stats")]
     public int strength; //1 point increase damage by 1 and crit.power by 1% (1? -> damage+1, chi mang +1)
@@ -124,6 +122,16 @@ public class ItemData_Equipment : ItemData
         AddItemDescription(iceDamage, "Ice damage");
         AddItemDescription(lightingDamage, "Lighting dmg. ");
 
+        for (int i = 0; i < itemEffects.Length; i++)
+        {
+            if (itemEffects[i].effectDescription.Length > 0)
+            {
+                sb.AppendLine();
+                sb.AppendLine("Unique: "  + itemEffects[i].effectDescription);
+                descriptionLength++;
+            }
+        }
+
         if (descriptionLength < 5)
         {
             for (int i = 0; i < 5 - descriptionLength; i++)
@@ -131,12 +139,6 @@ public class ItemData_Equipment : ItemData
                 sb.AppendLine();
                 sb.Append("");
             }
-        }
-
-        if (itemEffectDesctiption.Length > 0)
-        {
-            sb.AppendLine();
-            sb.Append(itemEffectDesctiption);
         }
 
         return sb.ToString();
