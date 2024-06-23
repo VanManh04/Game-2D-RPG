@@ -37,6 +37,7 @@ public class Inventory : MonoBehaviour, ISaveManager
 
     [Header("Data base")]
     public List<InventoryItem> loadedItems;
+    public List<ItemData_Equipment> loadedEquipment;
 
     private void Awake()
     {
@@ -67,6 +68,11 @@ public class Inventory : MonoBehaviour, ISaveManager
 
     private void AddStartingItems()
     {
+        foreach (ItemData_Equipment item in loadedEquipment)
+        {
+            EquipItem(item);
+        }
+
         if (loadedItems.Count > 0)
         {
             foreach (InventoryItem item in loadedItems)
@@ -331,7 +337,7 @@ public class Inventory : MonoBehaviour, ISaveManager
     public void LoadData(GameData _data)
     {
         //Debug.Log("Items loaded");
-        GetItemdataBase();
+
         foreach (KeyValuePair<string,int> pair in _data.inventory)
         {
             foreach (var item in GetItemdataBase())
@@ -345,22 +351,44 @@ public class Inventory : MonoBehaviour, ISaveManager
                 }
             }
         }
+
+        foreach (string loadedItemId in _data.equipmentId)
+        {
+            foreach (var item in GetItemdataBase())
+            {
+                if (item != null && loadedItemId == item.itemId)
+                {
+                    loadedEquipment.Add(item as ItemData_Equipment);
+                }
+            }
+        }
     }
 
     public void SaveData(ref GameData _data)
     {
         _data.inventory.Clear();
+        _data.equipmentId.Clear();
 
         foreach (KeyValuePair<ItemData,InventoryItem> pair in inventoryDictianory)
         {
             _data.inventory.Add(pair.Key.itemId, pair.Value.stackSize);
+        }
+
+        foreach (KeyValuePair<ItemData,InventoryItem> pair in stashDictianory)
+        {
+            _data.inventory.Add(pair.Key.itemId, pair.Value.stackSize);
+        }
+
+        foreach (KeyValuePair<ItemData_Equipment,InventoryItem> pair in equipmentDictionary)
+        {
+            _data.equipmentId.Add(pair.Key.itemId);
         }
     }
 
     public List<ItemData> GetItemdataBase()
     {
         List<ItemData> itemDataBase = new List<ItemData>();
-        string[] assetName = AssetDatabase.FindAssets("", new[] { "Assets/Data/Equipment" });
+        string[] assetName = AssetDatabase.FindAssets("", new[] { "Assets/Data/Items" });
 
         foreach (string SOName in assetName)
         {
