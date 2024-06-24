@@ -337,7 +337,7 @@ public class Inventory : MonoBehaviour, ISaveManager
     public void LoadData(GameData _data)
     {
         //Debug.Log("Items loaded");
-
+        //Debug.Log(2);
         foreach (KeyValuePair<string,int> pair in _data.inventory)
         {
             foreach (var item in GetItemdataBase())
