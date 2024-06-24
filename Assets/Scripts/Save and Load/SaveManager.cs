@@ -5,16 +5,17 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance;
-    [SerializeField] private string filename;
+    [SerializeField] private string fileName;
+    [SerializeField] private bool encryptData;
 
     private GameData gameData;
     private List<ISaveManager> saveManager;
     private FileDataHandler dataHandler;
 
     [ContextMenu("Delete save file")]
-    private void DeleteSavedData()
+    public void DeleteSavedData()
     {
-        dataHandler = new FileDataHandler(Application.persistentDataPath,filename);
+        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
         dataHandler.Delete();
     }
 
@@ -28,7 +29,7 @@ public class SaveManager : MonoBehaviour
 
     private void Start()
     {
-        dataHandler = new FileDataHandler(Application.persistentDataPath, filename);
+        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
         saveManager = FindAllSaveManager();
         LoadGame();
     }
@@ -83,4 +84,13 @@ public class SaveManager : MonoBehaviour
         return new List<ISaveManager>(saveManagers);
     }
 
+    public bool HasSavedData()
+    {
+        if (dataHandler.Load() != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

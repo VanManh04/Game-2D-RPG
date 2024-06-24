@@ -40,9 +40,6 @@ public class UI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.O))
             SwitchWitchKeyTo(optionsUI);
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-            SwitchTo(null);
     }
 
     public void SwitchTo(GameObject _menu)

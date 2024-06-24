@@ -127,7 +127,7 @@ public class ItemData_Equipment : ItemData
             if (itemEffects[i].effectDescription.Length > 0)
             {
                 sb.AppendLine();
-                sb.AppendLine("Unique: "  + itemEffects[i].effectDescription);
+                sb.AppendLine("Unique: " + itemEffects[i].effectDescription);
                 descriptionLength++;
             }
         }
