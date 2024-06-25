@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -53,6 +54,26 @@ public class AudioManager : MonoBehaviour
     }
 
     public void StopSFX(int _index) => sfx[_index].Stop();
+
+    public void StopSFXWithTime(int _index) => StartCoroutine(DecreaseVolume(sfx[_index]));
+
+    private IEnumerator DecreaseVolume(AudioSource _audio)
+    {
+        float defaultVolume = _audio.volume;
+
+        while (_audio.volume > .1f)
+        {
+            _audio.volume -= _audio.volume * .2f;
+            yield return new WaitForSeconds(.6f);
+        
+            if (_audio.volume <= .1f)
+            {
+                _audio.Stop();
+                _audio.volume = defaultVolume;
+                break;
+            }
+        }
+    }
 
     public void PlayRandomBGM()
     {
