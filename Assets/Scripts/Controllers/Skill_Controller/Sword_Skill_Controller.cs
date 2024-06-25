@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
-using UnityEditor.U2D.Aseprite;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Sword_Skill_Controller : MonoBehaviour
@@ -52,7 +49,7 @@ public class Sword_Skill_Controller : MonoBehaviour
     }
 
     //Cấu hình thông số cho kiếm như hướng, trọng lực, thời gian đóng băng, và tốc độ trở về.[Cau hinh thong so cho kiem nhu Huong,trong luc,thoi gian dong bang,toc do tro ve]
-    public void SetupSword(Vector2 _dir, float _gravityScale,Player _player,float _freezeTimeDuration,float _returnSpeed)
+    public void SetupSword(Vector2 _dir, float _gravityScale, Player _player, float _freezeTimeDuration, float _returnSpeed)
     {
         player = _player;
         freezeTimeDuration = _freezeTimeDuration;
@@ -61,7 +58,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         rb.velocity = _dir;
         rb.gravityScale = _gravityScale;
 
-        if(pierceAmount<=0)
+        if (pierceAmount <= 0)
             anim.SetBool("Rotation", true);
 
         spinDirection = Mathf.Clamp(rb.velocity.x, -1, 1);
@@ -70,7 +67,7 @@ public class Sword_Skill_Controller : MonoBehaviour
     }
 
     //Cấu hình thông số cho tính năng nảy, bao gồm số lần nảy và tốc độ nảy. [Cau hinh thng so tinh nang nay thoong so va toc do nay]
-    public void SetupBounce(bool _isBouncing,int _amountOfBounces,float _bounceSpeed)
+    public void SetupBounce(bool _isBouncing, int _amountOfBounces, float _bounceSpeed)
     {
         isBouncing = _isBouncing;
         bounceAmount = _amountOfBounces;
@@ -87,7 +84,7 @@ public class Sword_Skill_Controller : MonoBehaviour
 
     // Cấu hình thông số cho tính năng quay, bao gồm khoảng cách tối đa, thời gian quay, và thời gian nghỉ giữa các lần quay.
     // Cau hinh thong so cho tinh nang quay, bao gom khoang cach toi da, thoi gian quay , va thoi gian nghi giua cac lan quay
-    public void SetupSpin(bool _isSpinning, float _maxTravelDistance, float _spinDuration,float _hitCooldown)
+    public void SetupSpin(bool _isSpinning, float _maxTravelDistance, float _spinDuration, float _hitCooldown)
     {
         isSpinning = _isSpinning;
         maxTravelDistance = _maxTravelDistance;
@@ -221,12 +218,12 @@ public class Sword_Skill_Controller : MonoBehaviour
 
         player.stats.DoDamage(enemy.GetComponent<CharacterStats>()); //enemy.DamageEffect();
 
-        if(player.skill.sword.timeStopUnlocked)
+        if (player.skill.sword.timeStopUnlocked)
             enemy.FreezeTimeFor(freezeTimeDuration);
 
         if (player.skill.sword.vulnerableUnlocked)
             enemyStats.MakeVulnerableFor(freezeTimeDuration);
-            //Debug.Log("make it vulnerable");
+        //Debug.Log("make it vulnerable");
 
         ItemData_Equipment equipedAmiler = Inventory.instance.GetEquipment(EquipmentType.Amulet);
 
@@ -273,7 +270,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         rb.isKinematic = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
-        if (isBouncing && enemyTarget.Count>0)
+        if (isBouncing && enemyTarget.Count > 0)
             return;
 
         anim.SetBool("Rotation", false);

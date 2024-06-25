@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Crystal_Skill_Controller : MonoBehaviour
@@ -19,9 +17,9 @@ public class Crystal_Skill_Controller : MonoBehaviour
 
     private Transform closestTarget;
     [SerializeField] private LayerMask whatIsEnemy;
-    public void SetupCrystal(float _currentDuration,bool _canExplode,bool _canMove , float _moveSpeed,Transform _closestTarget,Player _player)
+    public void SetupCrystal(float _currentDuration, bool _canExplode, bool _canMove, float _moveSpeed, Transform _closestTarget, Player _player)
     {
-        crystalExistTimer =_currentDuration;
+        crystalExistTimer = _currentDuration;
         canExplode = _canExplode;
         canMove = _canMove;
         moveSpeed = _moveSpeed;
@@ -33,7 +31,7 @@ public class Crystal_Skill_Controller : MonoBehaviour
     {
         float radius = SkillManager.instance.blackhole.GetBlackholeRadius();
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius,whatIsEnemy);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius, whatIsEnemy);
 
         if (colliders.Length > 0)
             closestTarget = colliders[Random.Range(0, colliders.Length)].transform;
@@ -75,6 +73,7 @@ public class Crystal_Skill_Controller : MonoBehaviour
         {
             if (hit.GetComponent<Enemy>() != null)
             {
+                hit.GetComponent<Entity>().SetupKnockbackDir(transform);
                 player.stats.DoMagicalDamage(hit.GetComponent<CharacterStats>());
                 //hit.GetComponent<Enemy>().DamageEffect();
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Clone_Skill_Controller : MonoBehaviour
@@ -39,7 +37,7 @@ public class Clone_Skill_Controller : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void SetupClone(Transform _newTrabsform,float _cloneDuration,bool _canAttack,Vector3 _offset,Transform _closestEnemy,bool _canDulicateClone,float _chanceToDuplicate,Player _player, float _attackMultiplier)
+    public void SetupClone(Transform _newTrabsform, float _cloneDuration, bool _canAttack, Vector3 _offset, Transform _closestEnemy, bool _canDulicateClone, float _chanceToDuplicate, Player _player, float _attackMultiplier)
     {
         anim = GetComponent<Animator>();
 
@@ -53,7 +51,7 @@ public class Clone_Skill_Controller : MonoBehaviour
         closestEnemy = _closestEnemy;
         canDulicateClone = _canDulicateClone;
         chanceToDuplicate = _chanceToDuplicate;
-        player =_player;
+        player = _player;
         FaceClosestTarget();
     }
 
@@ -72,6 +70,9 @@ public class Clone_Skill_Controller : MonoBehaviour
             {
                 //player.stats.DoDamage(hit.GetComponent<CharacterStats>());
                 //hit.GetComponent<Enemy>().DamageEffect();
+
+                hit.GetComponent<Entity>().SetupKnockbackDir(transform);
+
                 PlayerStats playerStats = player.GetComponent<PlayerStats>();
                 EnemyStats enemyStats = hit.GetComponent<EnemyStats>();
 

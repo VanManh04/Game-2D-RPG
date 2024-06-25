@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SkeletonBattleState : EnemyState
@@ -18,6 +16,9 @@ public class SkeletonBattleState : EnemyState
         base.Enter();
 
         player = PlayerManager.instance.player.transform;
+
+        if (player.GetComponent<PlayerStats>().isDead && player.GetComponent<PlayerStats>() != null)
+            stateMachine.ChangeState(enemy.moveState);
     }
 
     public override void Update()
@@ -30,10 +31,11 @@ public class SkeletonBattleState : EnemyState
             if (enemy.IsPlayerDetected().distance < enemy.attackDistance)
             {
                 //Debug.Log("I Attack");
-                if(CanAttack())
+                if (CanAttack())
                     stateMachine.ChangeState(enemy.attackState);
             }
-        }else
+        }
+        else
         {
             if (stateTimer < 0 || Vector2.Distance(player.transform.position, enemy.transform.position) > 15f)
                 stateMachine.ChangeState(enemy.idleState);
@@ -57,7 +59,9 @@ public class SkeletonBattleState : EnemyState
     {
         if (Time.time >= enemy.lastTimeAttacked + enemy.attackCooldown)
         {
-            enemy.lastTimeAttacked = Time.time; 
+            enemy.attackCooldown = Random.Range(enemy.minAttackCooldown, enemy.maxAttackCooldown);
+
+            enemy.lastTimeAttacked = Time.time;
             return true;
         }
 

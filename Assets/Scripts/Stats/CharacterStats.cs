@@ -64,6 +64,7 @@ public class CharacterStats : MonoBehaviour
 
     public System.Action onHealthChanged;       // su kien khi mau thay doi
     public bool isDead { get; private set; }
+    public bool isInvincible { get; private set; } //bat tu trong Dash
     private bool isVulnerable;
 
     protected virtual void Start()
@@ -124,6 +125,8 @@ public class CharacterStats : MonoBehaviour
     {
         if (TargetCanAvoidAttack(_targetStats))
             return;// muc tieu trang duoc don tan cong -> thoat ham
+
+        _targetStats.GetComponent<Entity>().SetupKnockbackDir(transform);
 
         int totalDamage = damage.GetValue() + strength.GetValue();// tong sat thuong = sat thuong co ban + suc manh
 
@@ -318,6 +321,9 @@ public class CharacterStats : MonoBehaviour
     //Gay sat thuong cho nhan vat kiem tra xem nhan vat co chet khong
     public virtual void TakeDamage(int _damage)
     {
+        if (isInvincible)
+            return;
+
         DecreaseHealthBy(_damage);
         GetComponent<Entity>().DamageImpact();
         fx.StartCoroutine("FlashFX");
@@ -357,6 +363,13 @@ public class CharacterStats : MonoBehaviour
         isDead = true;
     }
 
+    public void KillEntity()
+    {
+        if (!isDead)
+            Die();
+    }
+
+    public void MakeInvincible(bool _invincible) => isInvincible = _invincible;
 
     #region Stay caculations
     //kiem tra giap cua muc tieu va giam sat thuong tuong ung

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -15,7 +14,7 @@ public class Entity : MonoBehaviour
     #endregion
 
     [Header("Knockback info")]
-    [SerializeField] protected Vector2 knockbackDirection;  //huong knockback
+    [SerializeField] protected Vector2 knockbackPower;  //huong knockback
     [SerializeField] protected float knockbackDuration;     //thoi gian knock back
     protected bool isKnockback;     //Co de kiem tra knockback
 
@@ -28,6 +27,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float wallCheckDistance;       //Khoang cach de kiem tra tuong
     [SerializeField] protected LayerMask whatIsGround;       //Layer kiem tra mat dat
 
+    public int knockbackDir { get; private set; }
 
     public int facingDir { get; private set; } = 1;       //Huong doi mat
     protected bool facingRight = true;       //co de kiem tra huong doi mat
@@ -36,7 +36,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void Awake()
     {
-        
+
     }
 
     protected virtual void Start()
@@ -56,7 +56,7 @@ public class Entity : MonoBehaviour
 
     public virtual void SlowEntityBy(float _slowPercentage, float _slowDutation)//lam cham Entity bang phan tram lam cham va thoi gian lam cham
     {
-        
+
     }
 
     protected virtual void ReturnDefaultSpeed()
@@ -65,19 +65,33 @@ public class Entity : MonoBehaviour
     }
 
     //goi khi entity bo tan cong va bat FX...
-    public virtual void DamageImpact()
+    public virtual void DamageImpact() => StartCoroutine("HitKnockback");
+    //Debug.Log(gameObject.name + " was damaged!");
+
+    public virtual void SetupKnockbackDir(Transform _damageDirection)
     {
-        StartCoroutine("HitKnockback");
-        //Debug.Log(gameObject.name + " was damaged!");
+        if (_damageDirection.position.x > transform.position.x)
+            knockbackDir = -1;
+        else if (_damageDirection.position.x < transform.position.x)
+            knockbackDir = 1;
     }
-    
+
+    public void SetupKnockbackPower(Vector2 _knockbackpower) => knockbackPower = _knockbackpower;
+
     protected virtual IEnumerator HitKnockback()// xu ly knockback khi entity bi tan cong
     {
         isKnockback = true;
-        rb.velocity = new Vector2(knockbackDirection.x*-facingDir, knockbackDirection.y);
-        
+        rb.velocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
+
         yield return new WaitForSeconds(knockbackDuration);
         isKnockback = false;
+
+        SetupZeroKnockbackPower();
+    }
+
+    protected virtual void SetupZeroKnockbackPower()
+    {
+
     }
 
     #region Collision

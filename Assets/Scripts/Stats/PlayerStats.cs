@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStats : CharacterStats
@@ -34,6 +32,17 @@ public class PlayerStats : CharacterStats
     protected override void DecreaseHealthBy(int _damage)
     {
         base.DecreaseHealthBy(_damage);
+        if (isDead)
+            return;
+
+        if (_damage > GetMaxHealthValue() * .3f)
+        {
+            player.SetupKnockbackPower(new Vector2(10, 6));
+
+            int randomSound = Random.Range(34, 35);
+            AudioManager.instance.PlaySFX(randomSound, null);
+            //Debug.Log("High damage taken");
+        }
 
         ItemData_Equipment currentArmor = Inventory.instance.GetEquipment(EquipmentType.Armor);
 
