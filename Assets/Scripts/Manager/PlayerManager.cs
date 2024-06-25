@@ -29,7 +29,7 @@ public class PlayerManager : MonoBehaviour , ISaveManager
         return true;
     }
 
-    public int GetCurrentCurrency() => currency;
+    public int GetCurrency() => currency;
 
     public void LoadData(GameData _data)
     {

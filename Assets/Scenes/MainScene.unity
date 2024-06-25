@@ -2529,6 +2529,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoints: []
   closestCheckpointId: 
+  lostCurrencyPrefab: {fileID: 8079688384022686481, guid: 5fc992b56240e0543ae0f9326a488de5, type: 3}
+  lostCurrencyAmount: 0
+  lostCurrencyX: 0
+  lostCurrencyY: 0
 --- !u!4 &165162006
 Transform:
   m_ObjectHideFlags: 0
@@ -4444,7 +4448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1752805434}
-  currency: 5555
+  currency: 0
 --- !u!4 &262769703
 Transform:
   m_ObjectHideFlags: 0
@@ -6331,7 +6335,7 @@ Transform:
   m_GameObject: {fileID: 442364892}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.692635, y: 0.031242043, z: -9.985824}
+  m_LocalPosition: {x: -29.812634, y: -1.638758, z: -9.985824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8059,7 +8063,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.692635, y: 0.031242043, z: -9.985824}
+  m_LocalPosition: {x: -29.812634, y: -1.638758, z: -9.985824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10734,7 +10738,10 @@ MonoBehaviour:
   ailmentsDuration: 4
   shockStrikePrefabs: {fileID: 6458537078336833690, guid: 70dc2dfa04467c945b99806112b40d60, type: 3}
   currentHealth: 0
-  lever: 1
+  soulsDropAmount:
+    baseValue: 0
+    modifiers: 
+  lever: 3
   percantageModifier: 0.4
 --- !u!70 &721615507
 CapsuleCollider2D:
@@ -24388,7 +24395,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1,5623
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
   m_sharedMaterial: {fileID: -8065883861848785263, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
@@ -27121,7 +27128,7 @@ Transform:
   m_GameObject: {fileID: 1752805432}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.02, y: 0.49, z: 0}
+  m_LocalPosition: {x: -28.14, y: -1.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27286,7 +27293,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   maxHealth:
-    baseValue: 100
+    baseValue: 1
     modifiers: 
   armor:
     baseValue: 0
@@ -32698,6 +32705,8 @@ MonoBehaviour:
   blackHoleImage: {fileID: 1829488849}
   flaskImage: {fileID: 152269934}
   currentSouls: {fileID: 1483829697}
+  soulsAmount: 0
+  increaseRate: 1000
 --- !u!1 &2143504310
 GameObject:
   m_ObjectHideFlags: 0
