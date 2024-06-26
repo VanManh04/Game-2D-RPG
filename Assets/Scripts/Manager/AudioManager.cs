@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
             instance = this;
 
         Invoke("AllowSFX", 1f);
+        //Debug.Log(1);
     }
 
     private void Update()
