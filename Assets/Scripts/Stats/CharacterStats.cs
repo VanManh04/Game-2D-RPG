@@ -123,6 +123,8 @@ public class CharacterStats : MonoBehaviour
     //gay sat thuong vat ly cho muc tieu
     public virtual void DoDamage(CharacterStats _targetStats)
     {
+        bool critycalStrike = false;
+
         if (TargetCanAvoidAttack(_targetStats))
             return;// muc tieu trang duoc don tan cong -> thoat ham
 
@@ -135,9 +137,11 @@ public class CharacterStats : MonoBehaviour
             //Debug.Log("CRIT HIT");
 
             totalDamage = CalculateCritucalDamage(totalDamage);// Tinh toan sat thuong chi mang neu co the chi mang
-
+            critycalStrike = true;
             //Debug.Log("Total crit damage is "+totalDamage);
         }
+
+        fx.CreateHitFx(_targetStats.transform,critycalStrike);
 
         totalDamage = CheckTargetArmor(_targetStats, totalDamage);// tru giap cua muc tieu tu tong sat thuong
         _targetStats.TakeDamage(totalDamage);
