@@ -141,7 +141,7 @@ public class CharacterStats : MonoBehaviour
             //Debug.Log("Total crit damage is "+totalDamage);
         }
 
-        fx.CreateHitFx(_targetStats.transform,critycalStrike);
+        fx.CreateHitFx(_targetStats.transform, critycalStrike);
 
         totalDamage = CheckTargetArmor(_targetStats, totalDamage);// tru giap cua muc tieu tu tong sat thuong
         _targetStats.TakeDamage(totalDamage);
@@ -356,6 +356,9 @@ public class CharacterStats : MonoBehaviour
             _damage = Mathf.RoundToInt(_damage * 1.1f);
 
         currentHealth -= _damage;
+
+        if (_damage > 0)
+            fx.CreatePopUpText(_damage.ToString());
 
         if (onHealthChanged != null)
             onHealthChanged();
