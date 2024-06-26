@@ -45855,7 +45855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a5fe693bef2e5409fef75f7d013f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackPower: {x: 0, y: 0}
+  knockbackPower: {x: 10, y: 6}
   knockbackDuration: 0.3
   attackCheck: {fileID: 421957643}
   attackCheckRadius: 0.8
