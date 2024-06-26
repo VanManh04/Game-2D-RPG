@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 //Inventory: Day la lop quan ly kho do nguoi choi
@@ -32,10 +33,11 @@ public class Inventory : MonoBehaviour, ISaveManager
     private float lastTimeUsedFlash;
     private float lastTimeUsedArmor;
 
-    public float flaskCooldown {  get; private set; }
+    public float flaskCooldown { get; private set; }
     private float armorCooldown;
 
     [Header("Data base")]
+    public List<ItemData> itemDataBase;
     public List<InventoryItem> loadedItems;
     public List<ItemData_Equipment> loadedEquipment;
 
@@ -87,7 +89,7 @@ public class Inventory : MonoBehaviour, ISaveManager
 
         for (int i = 0; i < startingItems.Count; i++)
         {
-            if(startingItems[i] != null)
+            if (startingItems[i] != null)
                 AddItem(startingItems[i]);
         }
     }
@@ -338,9 +340,9 @@ public class Inventory : MonoBehaviour, ISaveManager
     {
         //Debug.Log("Items loaded");
         //Debug.Log(2);
-        foreach (KeyValuePair<string,int> pair in _data.inventory)
+        foreach (KeyValuePair<string, int> pair in _data.inventory)
         {
-            foreach (var item in GetItemdataBase())
+            foreach (var item in itemDataBase)
             {
                 if (item != null && item.itemId == pair.Key)
                 {
@@ -354,7 +356,7 @@ public class Inventory : MonoBehaviour, ISaveManager
 
         foreach (string loadedItemId in _data.equipmentId)
         {
-            foreach (var item in GetItemdataBase())
+            foreach (var item in itemDataBase)
             {
                 if (item != null && loadedItemId == item.itemId)
                 {
@@ -369,21 +371,25 @@ public class Inventory : MonoBehaviour, ISaveManager
         _data.inventory.Clear();
         _data.equipmentId.Clear();
 
-        foreach (KeyValuePair<ItemData,InventoryItem> pair in inventoryDictianory)
+        foreach (KeyValuePair<ItemData, InventoryItem> pair in inventoryDictianory)
         {
             _data.inventory.Add(pair.Key.itemId, pair.Value.stackSize);
         }
 
-        foreach (KeyValuePair<ItemData,InventoryItem> pair in stashDictianory)
+        foreach (KeyValuePair<ItemData, InventoryItem> pair in stashDictianory)
         {
             _data.inventory.Add(pair.Key.itemId, pair.Value.stackSize);
         }
 
-        foreach (KeyValuePair<ItemData_Equipment,InventoryItem> pair in equipmentDictionary)
+        foreach (KeyValuePair<ItemData_Equipment, InventoryItem> pair in equipmentDictionary)
         {
             _data.equipmentId.Add(pair.Key.itemId);
         }
     }
+
+#if UNITY_EDITOR
+    [ContextMenu("Fill up item data base")]
+    private void FillUpItemDataBase() => itemDataBase = new List<ItemData>(GetItemdataBase());
 
     public List<ItemData> GetItemdataBase()
     {
@@ -400,4 +406,5 @@ public class Inventory : MonoBehaviour, ISaveManager
 
         return itemDataBase;
     }
+#endif
 }

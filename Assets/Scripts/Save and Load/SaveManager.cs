@@ -6,6 +6,7 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance;
     [SerializeField] private string fileName;
+    [SerializeField] private string filePath = "idbfs/vanmanhdev921024938hfbheirhbv";
     [SerializeField] private bool encryptData;
 
     private GameData gameData;
@@ -15,7 +16,8 @@ public class SaveManager : MonoBehaviour
     [ContextMenu("Delete save file")]
     public void DeleteSavedData()
     {
-        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
+        //dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
+        dataHandler = new FileDataHandler(filePath, fileName, encryptData);
         dataHandler.Delete();
     }
 
@@ -29,7 +31,7 @@ public class SaveManager : MonoBehaviour
 
     private void Start()
     {
-        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
+        dataHandler = new FileDataHandler(filePath, fileName, encryptData);
         saveManager = FindAllSaveManager();
         LoadGame();
     }
