@@ -1,9 +1,17 @@
+using Cinemachine;
 using System.Collections;
 using UnityEngine;
 
 public class EntityFX : MonoBehaviour
 {
+    private Player player;
     private SpriteRenderer sr;
+
+    [Header("Screen shake FX")]
+    private CinemachineImpulseSource screenShake;
+    [SerializeField] private float shakeMultiplier;
+    public Vector3 shakeSwordImpact;
+    public Vector3 shakeHighDamage;
 
     [Header("After image fx")]
     [SerializeField] private GameObject afterImagePrefab;
@@ -36,12 +44,20 @@ public class EntityFX : MonoBehaviour
     void Start()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
+        player = PlayerManager.instance.player;
+        screenShake = GetComponent<CinemachineImpulseSource>();
         originalMat = sr.material;
     }
 
     private void Update()
     {
         afterImageCooldownTime -= Time.deltaTime;
+    }
+
+    public void ScreenShake(Vector3 _sakePower)
+    {
+        screenShake.m_DefaultVelocity = new Vector3(_sakePower.x * player.facingDir, _sakePower.y) * shakeMultiplier;
+        screenShake.GenerateImpulse();
     }
 
     public void CreateAfterImage()
@@ -164,7 +180,7 @@ public class EntityFX : MonoBehaviour
             hitFxRotation = new Vector3(0, yRotation, zRotation);
         }
 
-        GameObject newHitFx = Instantiate(hitPrefab, _target.position + new Vector3(xPosition, yPosition), Quaternion.identity);
+        GameObject newHitFx = Instantiate(hitPrefab, _target.position + new Vector3(xPosition, yPosition), Quaternion.identity);//,_target);
 
         newHitFx.transform.Rotate(hitFxRotation);
 
