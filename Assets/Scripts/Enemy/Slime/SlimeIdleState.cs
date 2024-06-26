@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkeletonIdleState : SkeletonGroundedState
+public class SlimeIdleState : SlimeGroundedState
 {
-    private Enemy_Skeleton enemy;
-    public SkeletonIdleState(Enemy _enemyBase, EnemyStateMachine _startMachine, string _animBoolName, Enemy_Skeleton _enemy) : base(_enemyBase, _startMachine, _animBoolName, _enemy)
+    public SlimeIdleState(Enemy _enemyBase, EnemyStateMachine _startMachine, string _animBoolName, Enemy_Slime _enemy) : base(_enemyBase, _startMachine, _animBoolName, _enemy)
     {
-        this.enemy = _enemy;
     }
+
     public override void Enter()
     {
         base.Enter();
@@ -18,6 +17,8 @@ public class SkeletonIdleState : SkeletonGroundedState
     public override void Exit()
     {
         base.Exit();
+
+        AudioManager.instance.PlaySFX(14, enemy.transform);
     }
 
     public override void Update()

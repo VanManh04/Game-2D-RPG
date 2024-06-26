@@ -194,12 +194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpTextPrefab: {fileID: 7228914828705292693, guid: 931255216b47d5641834f6013b1748bc, type: 3}
-  shakeMultiplier: 0
-  shakeSwordImpact: {x: 0, y: 0, z: 0}
-  shakeHighDamage: {x: 0, y: 0, z: 0}
-  afterImagePrefab: {fileID: 0}
-  colorlooseRate: 0
-  afterImageCooldown: 0
   flashDuration: 0.2
   hitMat: {fileID: 2100000, guid: 469c414c1002307469812b337e96aa3e, type: 2}
   igniteColor:
@@ -216,7 +210,6 @@ MonoBehaviour:
   shockFx: {fileID: 4153569914351233154}
   hitFx: {fileID: 4196526934774628209, guid: edf6052120280dc439fbf59d47780c2a, type: 3}
   criticalHitFx: {fileID: 5870892503380978555, guid: 688590bb69833c04e89daa07609dd00c, type: 3}
-  dustFx: {fileID: 0}
 --- !u!114 &1139581448006397928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +235,7 @@ MonoBehaviour:
     baseValue: 10
     modifiers: 
   damage:
-    baseValue: 50
+    baseValue: 10
     modifiers: 
   critChance:
     baseValue: 99
