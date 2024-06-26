@@ -4,6 +4,13 @@ using UnityEngine;
 public class EntityFX : MonoBehaviour
 {
     private SpriteRenderer sr;
+
+    [Header("After image fx")]
+    [SerializeField] private GameObject afterImagePrefab;
+    [SerializeField] private float colorlooseRate;
+    [SerializeField] private float afterImageCooldown;
+    private float afterImageCooldownTime;
+
     [Header("Flash FX")]
     [SerializeField] private float flashDuration;
     [SerializeField] private Material hitMat;
@@ -30,6 +37,22 @@ public class EntityFX : MonoBehaviour
     {
         sr = GetComponentInChildren<SpriteRenderer>();
         originalMat = sr.material;
+    }
+
+    private void Update()
+    {
+        afterImageCooldownTime -= Time.deltaTime;
+    }
+
+    public void CreateAfterImage()
+    {
+        if (afterImageCooldownTime < 0)
+        {
+            afterImageCooldownTime = afterImageCooldown;
+            GameObject newAfterImage = Instantiate(afterImagePrefab, transform.position, transform.rotation);
+
+            newAfterImage.GetComponent<AfterImageFX>().SetupAfterImage(colorlooseRate, sr.sprite);
+        }
     }
 
     // doi mau sac cua entity
@@ -118,7 +141,7 @@ public class EntityFX : MonoBehaviour
             sr.color = shockColor[1];
     }
 
-    public void CreateHitFx(Transform _target,bool _critical)
+    public void CreateHitFx(Transform _target, bool _critical)
     {
         //chi mang -> mau xanh
         // 0 chi mang = mau vang
@@ -126,7 +149,7 @@ public class EntityFX : MonoBehaviour
         float xPosition = Random.Range(-.5f, .5f);
         float yPosition = Random.Range(-.5f, .5f);
 
-        Vector3 hitFxRotation = new Vector3(0,0,zRotation);
+        Vector3 hitFxRotation = new Vector3(0, 0, zRotation);
         GameObject hitPrefab = hitFx;
         if (_critical)
         {
@@ -143,14 +166,14 @@ public class EntityFX : MonoBehaviour
 
         GameObject newHitFx = Instantiate(hitPrefab, _target.position + new Vector3(xPosition, yPosition), Quaternion.identity);
 
-            newHitFx.transform.Rotate(hitFxRotation);
+        newHitFx.transform.Rotate(hitFxRotation);
 
-        Destroy(newHitFx,.5f);
+        Destroy(newHitFx, .5f);
     }
 
     public void PlayDustFX()
     {
-        if(dustFx != null)
+        if (dustFx != null)
             dustFx.Play();
     }
 }
