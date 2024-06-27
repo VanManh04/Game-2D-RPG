@@ -1,9 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SkeletonDeadState : EnemyState
+public class ArcherDeadState : EnemyState
 {
-    private Enemy_Skeleton enemy;
-    public SkeletonDeadState(Enemy _enemyBase, EnemyStateMachine _startMachine, string _animBoolName, Enemy_Skeleton _enemy) : base(_enemyBase, _startMachine, _animBoolName)
+    private Enemy_Archer enemy;
+    public ArcherDeadState(Enemy _enemyBase, EnemyStateMachine _startMachine, string _animBoolName, Enemy_Archer _enemy) : base(_enemyBase, _startMachine, _animBoolName)
     {
         this.enemy = _enemy;
     }

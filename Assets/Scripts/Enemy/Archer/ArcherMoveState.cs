@@ -1,9 +1,8 @@
-public class SkeletonMoveState : SkeletonGroundedState
+﻿public class ArcherMoveState : ArcherGroundedState
 {
-    public SkeletonMoveState(Enemy _enemyBase, EnemyStateMachine _startMachine, string _animBoolName, Enemy_Skeleton _enemy) : base(_enemyBase, _startMachine, _animBoolName, _enemy)
+    public ArcherMoveState(Enemy _enemyBase, EnemyStateMachine _startMachine, string _animBoolName, Enemy_Archer _enemy) : base(_enemyBase, _startMachine, _animBoolName, _enemy)
     {
     }
-
     public override void Enter()
     {
         base.Enter();

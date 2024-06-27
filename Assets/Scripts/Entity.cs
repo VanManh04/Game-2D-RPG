@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -14,18 +13,18 @@ public class Entity : MonoBehaviour
     #endregion
 
     [Header("Knockback info")]
-    [SerializeField] protected Vector2 knockbackPower;  //huong knockback
-    [SerializeField] protected Vector2 knockbackOffset;
-    [SerializeField] protected float knockbackDuration;     //thoi gian knock back
+    [SerializeField] protected Vector2 knockbackPower = new Vector2(7, 12);  //huong knockback
+    [SerializeField] protected Vector2 knockbackOffset = new Vector2(.5f, 2);
+    [SerializeField] protected float knockbackDuration = .07f;     //thoi gian knock back
     protected bool isKnockback;     //Co de kiem tra knockback
 
     [Header("Collision info")]
     public Transform attackCheck;       // Tham chieu toi Transform de kiem tra attack
-    public float attackCheckRadius;     //ban kinh kiem tra Attack
+    public float attackCheckRadius = 1.2f;     //ban kinh kiem tra Attack
     [SerializeField] protected Transform groundCheck;       //Tham chieu toi Tranform de kiem tra mat fat
-    [SerializeField] protected float groundCheckDistance;       //Khoang cach de kiem tra mat dat
+    [SerializeField] protected float groundCheckDistance = 1;       //Khoang cach de kiem tra mat dat
     [SerializeField] protected Transform wallCheck;       //Tham chieu toi Tranform de kiem tra tuong
-    [SerializeField] protected float wallCheckDistance;       //Khoang cach de kiem tra tuong
+    [SerializeField] protected float wallCheckDistance = .8f;       //Khoang cach de kiem tra tuong
     [SerializeField] protected LayerMask whatIsGround;       //Layer kiem tra mat dat
 
     public int knockbackDir { get; private set; }
@@ -84,7 +83,7 @@ public class Entity : MonoBehaviour
 
         float xOffset = Random.Range(knockbackOffset.x, knockbackOffset.y);
         //if (knockbackPower.x > 0 || knockbackPower.y > 0)
-            rb.velocity = new Vector2((knockbackPower.x + xOffset) * knockbackDir, knockbackPower.y);
+        rb.velocity = new Vector2((knockbackPower.x + xOffset) * knockbackDir, knockbackPower.y);
 
         yield return new WaitForSeconds(knockbackDuration);
         isKnockback = false;
