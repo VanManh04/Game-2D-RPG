@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -14,6 +15,7 @@ public class Entity : MonoBehaviour
 
     [Header("Knockback info")]
     [SerializeField] protected Vector2 knockbackPower;  //huong knockback
+    [SerializeField] protected Vector2 knockbackOffset;
     [SerializeField] protected float knockbackDuration;     //thoi gian knock back
     protected bool isKnockback;     //Co de kiem tra knockback
 
@@ -79,7 +81,10 @@ public class Entity : MonoBehaviour
     protected virtual IEnumerator HitKnockback()// xu ly knockback khi entity bi tan cong
     {
         isKnockback = true;
-        rb.velocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
+
+        float xOffset = Random.Range(knockbackOffset.x, knockbackOffset.y);
+        //if (knockbackPower.x > 0 || knockbackPower.y > 0)
+            rb.velocity = new Vector2((knockbackPower.x + xOffset) * knockbackDir, knockbackPower.y);
 
         yield return new WaitForSeconds(knockbackDuration);
         isKnockback = false;

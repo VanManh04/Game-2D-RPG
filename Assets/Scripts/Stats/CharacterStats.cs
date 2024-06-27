@@ -125,6 +125,9 @@ public class CharacterStats : MonoBehaviour
     {
         bool critycalStrike = false;
 
+        if (_targetStats.isInvincible)
+            return;
+
         if (TargetCanAvoidAttack(_targetStats))
             return;// muc tieu trang duoc don tan cong -> thoat ham
 
