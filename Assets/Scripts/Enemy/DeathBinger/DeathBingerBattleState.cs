@@ -1,15 +1,14 @@
-﻿using System.Collections;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ShadyBattleState : EnemyState
+public class DeathBingerBattleState : EnemyState
 {
     private Transform player;
-    private Enemy_Shady enemy;
+    private Enemy_DeathBinger enemy;
     private int moveDir;
 
-    private float defaultSpeed;
-
-    public ShadyBattleState(Enemy _enemyBase, EnemyStateMachine _startMachine, string _animBoolName,Enemy_Shady _enemy) : base(_enemyBase, _startMachine, _animBoolName)
+    public DeathBingerBattleState(Enemy _enemyBase, EnemyStateMachine _startMachine, string _animBoolName, Enemy_DeathBinger _enemy) : base(_enemyBase, _startMachine, _animBoolName)
     {
         this.enemy = _enemy;
     }
@@ -18,12 +17,10 @@ public class ShadyBattleState : EnemyState
     {
         base.Enter();
 
-        defaultSpeed = enemy.moveSpeed;
-        enemy.moveSpeed = enemy.battleStateMoveSpeed;
         player = PlayerManager.instance.player.transform;
 
-        if (player.GetComponent<PlayerStats>().isDead && player.GetComponent<PlayerStats>() != null)
-            stateMachine.ChangeState(enemy.moveState);
+        //if (player.GetComponent<PlayerStats>().isDead && player.GetComponent<PlayerStats>() != null)
+        //    stateMachine.ChangeState(enemy.moveState);
     }
 
     public override void Update()
@@ -34,12 +31,13 @@ public class ShadyBattleState : EnemyState
         {
             stateTimer = enemy.battleTime;
             if (enemy.IsPlayerDetected().distance < enemy.attackDistance)
-                enemy.stats.KillEntity();// this enteres dead state which triggers explosion + drop items and souls
-        }
-        else
-        {
-            if (stateTimer < 0 || Vector2.Distance(player.transform.position, enemy.transform.position) > 9f)
-                stateMachine.ChangeState(enemy.idleState);
+            {
+                //Debug.Log("I Attack");
+                if (CanAttack())
+                    stateMachine.ChangeState(enemy.attackState);
+                else 
+                    stateMachine.ChangeState(enemy.idleState);
+            }
         }
 
 
@@ -57,7 +55,6 @@ public class ShadyBattleState : EnemyState
     public override void Exit()
     {
         base.Exit();
-        enemy.moveSpeed = defaultSpeed;
     }
 
     private bool CanAttack()
