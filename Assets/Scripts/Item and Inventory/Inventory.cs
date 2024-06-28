@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 //Inventory: Day la lop quan ly kho do nguoi choi
@@ -250,39 +249,39 @@ public class Inventory : MonoBehaviour, ISaveManager
         return true;
     }
 
-    public bool CanCraft(ItemData_Equipment _itemToCraft, List<InventoryItem> _requiredMaterial)
+    public bool CanCraft(ItemData_Equipment _itemToCraft, List<InventoryItem> _requiredMaterials)
     {
-        List<InventoryItem> materialsToRemove = new List<InventoryItem>();
+        // Check if all required materials are avalible with the required quantity.
 
-        for (int i = 0; i < _requiredMaterial.Count; i++)
+        foreach (var requiredItem in _requiredMaterials)
         {
-            if (stashDictianory.TryGetValue(_requiredMaterial[i].data, out InventoryItem stashValue))
+            if (stashDictianory.TryGetValue(requiredItem.data, out InventoryItem stashItem))
             {
-                if (stashValue.stackSize < _requiredMaterial[i].stackSize)
+                if (stashItem.stackSize < requiredItem.stackSize)
                 {
-                    Debug.Log("Not enough materials");
+                    Debug.Log("Not enough materials: " + requiredItem.data.name);
                     return false;
-                }
-                else
-                {
-                    Debug.Log(stashValue.data.name);
-                    materialsToRemove.Add(stashValue);
                 }
             }
             else
             {
-                Debug.Log("Not enough materials");
+                Debug.Log("Materials not found in stash: " + requiredItem.data.name);
                 return false;
             }
         }
 
-        for (int i = 0; i < materialsToRemove.Count; i++)
+        // If all materials are avalible, remove them from stash.
+
+        foreach (var requiredMaterial in _requiredMaterials)
         {
-            RemoveItem(materialsToRemove[i].data);
+            for (int i = 0; i < requiredMaterial.stackSize; i++)
+            {
+                RemoveItem(requiredMaterial.data);
+            }
         }
 
         AddItem(_itemToCraft);
-        Debug.Log("Here is your item: " + _itemToCraft.name);
+        Debug.Log("Craft is succsesful: " + _itemToCraft.name);
         return true;
     }
 
