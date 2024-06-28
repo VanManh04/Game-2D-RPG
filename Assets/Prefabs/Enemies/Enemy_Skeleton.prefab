@@ -176,7 +176,7 @@ MonoBehaviour:
   counterImage: {fileID: 7266779597086072221}
   moveSpeed: 1.5
   idleTime: 2
-  battleTime: 10
+  battleTime: 5
   agroDistance: 2
   attackDistance: 2
   attackCooldown: 0.4
@@ -289,13 +289,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff26f9d58990e748aed0cb7bfa550f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possibleItemDrop: 2
-  possibleDrop:
+  maxItemsToDrop: 2
+  itemPool:
   - {fileID: 11400000, guid: e7135bc2a89219947bb194e9f207d84e, type: 2}
   - {fileID: 11400000, guid: 717d8b69a635ba4408199b1026b0d927, type: 2}
-  - {fileID: 11400000, guid: 5f38eb5dd70ed2f41b9fb9b693335e35, type: 2}
-  - {fileID: 11400000, guid: d35c9f371247bce4b881202ccabd0211, type: 2}
-  - {fileID: 11400000, guid: 6f7d6fdc2d157f140a492b988b2aabc4, type: 2}
+  - {fileID: 11400000, guid: 667fe35114f3d3b47aad6f5d52233b00, type: 2}
+  - {fileID: 11400000, guid: fd1c157ed9510f94f8dd1ffc66e77537, type: 2}
+  - {fileID: 11400000, guid: b171d435a7bf7e54d93a89bf826c6dcd, type: 2}
+  - {fileID: 11400000, guid: 457b2e795f058cf4990dde75127a3cb7, type: 2}
+  - {fileID: 11400000, guid: e319ec641fe686843b8d8ff4f52650d8, type: 2}
+  - {fileID: 11400000, guid: 7020ccdf1a8fdb14c82744eeb1512897, type: 2}
   dropPrefabs: {fileID: 1212890706246006704, guid: 7965f13c20eb8814baec925ef548d657, type: 3}
 --- !u!1 &3460569320546353449
 GameObject:
