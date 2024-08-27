@@ -161,4 +161,10 @@ public class Entity : MonoBehaviour
     {
 
     }
+
+    public void SetupAttackCheck(Vector2 _tranform, float _radius)
+    {
+        attackCheck.transform.localPosition = new Vector3(_tranform.x, _tranform.y, 0);
+        attackCheckRadius = _radius;
+    }
 }

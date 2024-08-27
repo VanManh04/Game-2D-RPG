@@ -154,6 +154,39 @@ public class CharacterStats : MonoBehaviour
         DoMagicalDamage(_targetStats);// xoa neu khong muon su dung phep thuat
     }
 
+    public virtual void DoDamagePhanTram(CharacterStats _targetStats, int PhanTram)
+    {
+        bool critycalStrike = false;
+
+        if (_targetStats.isInvincible)
+            return;
+
+        if (TargetCanAvoidAttack(_targetStats))
+            return;// muc tieu trang duoc don tan cong -> thoat ham
+
+        _targetStats.GetComponent<Entity>().SetupKnockbackDir(transform);
+
+        int totalDamage = (damage.GetValue() + strength.GetValue()) * PhanTram / 100;// tong sat thuong = sat thuong co ban + suc manh
+
+        if (CanCrit())
+        {
+            //Debug.Log("CRIT HIT");
+
+            totalDamage = CalculateCritucalDamage(totalDamage);// Tinh toan sat thuong chi mang neu co the chi mang
+            critycalStrike = true;
+            //Debug.Log("Total crit damage is "+totalDamage);
+        }
+
+        fx.CreateHitFx(_targetStats.transform, critycalStrike);
+
+        totalDamage = CheckTargetArmor(_targetStats, totalDamage);// tru giap cua muc tieu tu tong sat thuong
+        _targetStats.TakeDamage(totalDamage);
+
+        //if invnteroy current weapon has fire effect
+        // then
+        DoMagicalDamage(_targetStats);// xoa neu khong muon su dung phep thuat
+    }
+
     #region Magical damage and ailemnts
     //gay sat thuong phep len muc tieu va ap dung cac hieu ung phep thuat
     public virtual void DoMagicalDamage(CharacterStats _targetStats)

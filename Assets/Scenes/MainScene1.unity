@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -44,7 +44,6 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 0
@@ -391,15 +387,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -525,15 +523,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1305,11 +1305,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -1317,7 +1317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1464,15 +1464,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1823,6 +1825,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2459450961562074507, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 24452ade428f4c0448a6b4abacbe78c4, type: 3}
+  m_Resource: {fileID: 8300000, guid: 24452ade428f4c0448a6b4abacbe78c4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2206,15 +2209,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -2548,15 +2553,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -2807,15 +2814,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -2889,6 +2898,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: cc69f84686e78c44ba1fb0972705a451, type: 3}
+  m_Resource: {fileID: 8300000, guid: cc69f84686e78c44ba1fb0972705a451, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3323,15 +3333,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -3585,11 +3597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 687399859667035321, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 687399859667035321, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8702621849284060521, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_Name
@@ -3597,7 +3609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8702621849284060521, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3700,11 +3712,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 687399859667035321, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 687399859667035321, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8702621849284060521, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_Name
@@ -3712,7 +3724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8702621849284060521, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3996,15 +4008,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -4149,15 +4163,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -4530,15 +4546,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -4885,6 +4903,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2459450961562074507, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4f7e3b4efbf7a1b46aaf3f752b82707a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4f7e3b4efbf7a1b46aaf3f752b82707a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5085,15 +5104,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -5237,6 +5258,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: d44f2f1e37ed27c498fdc266bc02b5c9, type: 3}
+  m_Resource: {fileID: 8300000, guid: d44f2f1e37ed27c498fdc266bc02b5c9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5422,15 +5444,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -5657,15 +5681,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -5734,6 +5760,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8bcfb15309781d6438880e3ae204b0f3, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8bcfb15309781d6438880e3ae204b0f3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5938,15 +5965,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -6140,6 +6169,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 46487a1672ff4164f9d0a8039df12906, type: 3}
+  m_Resource: {fileID: 8300000, guid: 46487a1672ff4164f9d0a8039df12906, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -6652,6 +6682,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8dc8fde242a12544eb5c14646271a2fb, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8dc8fde242a12544eb5c14646271a2fb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -6747,11 +6778,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -6759,7 +6790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6849,6 +6880,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3f8137bd01703c7438872cce89ae1c28, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3f8137bd01703c7438872cce89ae1c28, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -7084,15 +7116,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -7218,15 +7252,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -7475,11 +7511,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -7487,7 +7523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7729,15 +7765,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -7773,11 +7811,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -7785,7 +7823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8065,15 +8103,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -8296,15 +8336,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -9063,15 +9105,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -9792,6 +9836,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2e96f80570da1214bbedf344e4dff00d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2e96f80570da1214bbedf344e4dff00d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -10293,6 +10338,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 59ab72b481a410642ab99bc8c1e8f6e7, type: 3}
+  m_Resource: {fileID: 8300000, guid: 59ab72b481a410642ab99bc8c1e8f6e7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -10806,15 +10852,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -10977,15 +11025,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -11013,7 +11063,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &616175941
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11027,6 +11077,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -11138,11 +11189,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -11150,7 +11201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11401,15 +11452,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -11478,6 +11531,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: d077a50e009adb64d98e2dd22ec97b4e, type: 3}
+  m_Resource: {fileID: 8300000, guid: d077a50e009adb64d98e2dd22ec97b4e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -11757,6 +11811,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 1ccedad8d5795f1409a53c018ebf0712, type: 3}
+  m_Resource: {fileID: 8300000, guid: 1ccedad8d5795f1409a53c018ebf0712, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -11966,15 +12021,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -12082,6 +12139,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16966,15 +17025,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -17233,15 +17294,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -17618,6 +17681,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8f397150faf31264bb32d32283c6b851, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8f397150faf31264bb32d32283c6b851, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -17795,11 +17859,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -17807,7 +17871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17973,15 +18037,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -18183,11 +18249,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -18195,7 +18261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18468,68 +18534,76 @@ PrefabInstance:
       value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[11]
+      propertyPath: 'itemPool.Array.data[11]'
       value: 
       objectReference: {fileID: 11400000, guid: e7135bc2a89219947bb194e9f207d84e, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[12]
+      propertyPath: 'itemPool.Array.data[12]'
       value: 
       objectReference: {fileID: 11400000, guid: 717d8b69a635ba4408199b1026b0d927, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[13]
+      propertyPath: 'itemPool.Array.data[13]'
       value: 
       objectReference: {fileID: 11400000, guid: 5cd41bbd606961448ad4ef69559e0ce6, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[14]
+      propertyPath: 'itemPool.Array.data[14]'
       value: 
       objectReference: {fileID: 11400000, guid: ab6fa5532c3c26447a817c6e5e83b137, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[15]
+      propertyPath: 'itemPool.Array.data[15]'
       value: 
       objectReference: {fileID: 11400000, guid: d35c9f371247bce4b881202ccabd0211, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[16]
+      propertyPath: 'itemPool.Array.data[16]'
       value: 
       objectReference: {fileID: 11400000, guid: cf7436f770003a7489203df9328240ba, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[17]
+      propertyPath: 'itemPool.Array.data[17]'
       value: 
       objectReference: {fileID: 11400000, guid: 6f7d6fdc2d157f140a492b988b2aabc4, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[18]
+      propertyPath: 'itemPool.Array.data[18]'
       value: 
       objectReference: {fileID: 11400000, guid: cf7436f770003a7489203df9328240ba, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[19]
+      propertyPath: 'itemPool.Array.data[19]'
       value: 
       objectReference: {fileID: 11400000, guid: d35c9f371247bce4b881202ccabd0211, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[20]
+      propertyPath: 'itemPool.Array.data[20]'
       value: 
       objectReference: {fileID: 11400000, guid: 457b2e795f058cf4990dde75127a3cb7, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[21]
+      propertyPath: 'itemPool.Array.data[21]'
       value: 
       objectReference: {fileID: 11400000, guid: e319ec641fe686843b8d8ff4f52650d8, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[22]
+      propertyPath: 'itemPool.Array.data[22]'
       value: 
       objectReference: {fileID: 11400000, guid: 7020ccdf1a8fdb14c82744eeb1512897, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[23]
+      propertyPath: 'itemPool.Array.data[23]'
       value: 
       objectReference: {fileID: 11400000, guid: 7020ccdf1a8fdb14c82744eeb1512897, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[24]
+      propertyPath: 'itemPool.Array.data[24]'
       value: 
       objectReference: {fileID: 11400000, guid: e319ec641fe686843b8d8ff4f52650d8, type: 2}
     - target: {fileID: 2107001905902971789, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
-      propertyPath: itemPool.Array.data[25]
+      propertyPath: 'itemPool.Array.data[25]'
       value: 
       objectReference: {fileID: 11400000, guid: 457b2e795f058cf4990dde75127a3cb7, type: 2}
     - target: {fileID: 2665769406762675032, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
       propertyPath: m_Name
       value: Enemy_DeathBringer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665769406762675032, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167781625819557748, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
+      propertyPath: maxHealth.baseValue
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 6362371722486746668, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -18541,11 +18615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878259432576837963, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 63.2
+      value: 87.75
       objectReference: {fileID: 0}
     - target: {fileID: 7878259432576837963, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.4
+      value: -1.55
       objectReference: {fileID: 0}
     - target: {fileID: 7878259432576837963, guid: 2baec3272d868b4408456c7481b6575b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18634,11 +18708,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 687399859667035321, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 687399859667035321, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8702621849284060521, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_Name
@@ -18646,7 +18720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8702621849284060521, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18863,15 +18937,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -19016,15 +19092,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -19205,6 +19283,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 1a60778c1cc80f944b0f982682585d7a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 1a60778c1cc80f944b0f982682585d7a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -19500,6 +19579,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: d4c4dbbd2cd3d7549bd1b115c55b5dd6, type: 3}
+  m_Resource: {fileID: 8300000, guid: d4c4dbbd2cd3d7549bd1b115c55b5dd6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -19699,11 +19779,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -19711,7 +19791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20107,15 +20187,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -20192,6 +20274,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -25076,15 +25160,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -25120,11 +25206,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -25132,7 +25218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25337,6 +25423,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 031913b601fc9b54b956557619752108, type: 3}
+  m_Resource: {fileID: 8300000, guid: 031913b601fc9b54b956557619752108, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -25598,15 +25685,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -25821,11 +25910,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -25833,7 +25922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26077,15 +26166,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -26287,6 +26378,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: f291df89fb8a72b43ab05d7b155e3b19, type: 3}
+  m_Resource: {fileID: 8300000, guid: f291df89fb8a72b43ab05d7b155e3b19, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -26517,6 +26609,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5564ef294084e46458f8c07b17e916bc, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5564ef294084e46458f8c07b17e916bc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -26779,15 +26872,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -26913,15 +27008,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -27047,15 +27144,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -27199,6 +27298,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 996b07f45a84d6c45a62d943846792b1, type: 3}
+  m_Resource: {fileID: 8300000, guid: 996b07f45a84d6c45a62d943846792b1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -27384,15 +27484,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -27461,6 +27563,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: a8257ce3e687f024087ed4e2ed49fafe, type: 3}
+  m_Resource: {fileID: 8300000, guid: a8257ce3e687f024087ed4e2ed49fafe, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -27664,6 +27767,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: fd962c6d13e6a6749ad9e3f122cbd4fd, type: 3}
+  m_Resource: {fileID: 8300000, guid: fd962c6d13e6a6749ad9e3f122cbd4fd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -27759,11 +27863,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2918542949259496594, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2918542949259496594, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3210284536853749872, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27811,7 +27915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9070902483807494068, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32577,6 +32681,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -32772,6 +32878,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 24844792cb2f4f74dac1ad98e998a975, type: 3}
+  m_Resource: {fileID: 8300000, guid: 24844792cb2f4f74dac1ad98e998a975, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -32957,15 +33064,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -33304,6 +33413,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -38226,11 +38337,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -38238,7 +38349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38328,6 +38439,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 84c106569adbeaf49a72263dab00d3fc, type: 3}
+  m_Resource: {fileID: 8300000, guid: 84c106569adbeaf49a72263dab00d3fc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -38620,15 +38732,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -38791,15 +38905,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -39161,6 +39277,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 17f1abe31ca7f584d88ed88e33e9b278, type: 3}
+  m_Resource: {fileID: 8300000, guid: 17f1abe31ca7f584d88ed88e33e9b278, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -39594,6 +39711,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: bc182bcfccf6e134f8488b8a6122503b, type: 3}
+  m_Resource: {fileID: 8300000, guid: bc182bcfccf6e134f8488b8a6122503b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -40142,15 +40260,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -40398,15 +40518,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -40878,15 +41000,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -41012,15 +41136,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -41428,15 +41554,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -41639,15 +41767,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -41849,15 +41979,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -42325,15 +42457,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -42439,6 +42573,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2459450961562074507, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: cda7c87295c706745a70be9029f09920, type: 3}
+  m_Resource: {fileID: 8300000, guid: cda7c87295c706745a70be9029f09920, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -42718,15 +42853,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -42800,6 +42937,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: de41eb4d867fa414ab8a34b9dcb43afb, type: 3}
+  m_Resource: {fileID: 8300000, guid: de41eb4d867fa414ab8a34b9dcb43afb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -43182,15 +43320,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -43244,6 +43384,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5e4fb6b768f40014095f965ef5fe5639, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5e4fb6b768f40014095f965ef5fe5639, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -43463,15 +43604,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -43774,15 +43917,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -44050,15 +44195,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -44128,6 +44275,7 @@ CompositeCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460366956}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -44151,7 +44299,8 @@ CompositeCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 1
   m_GenerationType: 0
@@ -44479,6 +44628,7 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460366956}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -44502,7 +44652,8 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -44524,6 +44675,8 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -62454,15 +62607,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -62588,15 +62743,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -62722,15 +62879,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -63008,6 +63167,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: dadc9b6883f1eca4e9325f2b20929dd2, type: 3}
+  m_Resource: {fileID: 8300000, guid: dadc9b6883f1eca4e9325f2b20929dd2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -63194,15 +63354,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -63328,15 +63490,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -63405,6 +63569,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 23c981de48e63ed4eb6d8dfe78390127, type: 3}
+  m_Resource: {fileID: 8300000, guid: 23c981de48e63ed4eb6d8dfe78390127, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -63533,6 +63698,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 958e557551add1942b2b7f01d8c154a8, type: 3}
+  m_Resource: {fileID: 8300000, guid: 958e557551add1942b2b7f01d8c154a8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -63904,6 +64070,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8e11a102b04af384a9ac6eef8cf48412, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8e11a102b04af384a9ac6eef8cf48412, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -64030,7 +64197,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1511928771
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -64044,6 +64211,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -64066,6 +64234,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -64258,6 +64428,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2459450961562074507, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8b79e962044a26741976608820e73518, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8b79e962044a26741976608820e73518, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -64442,11 +64613,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1885291398604952596, guid: bf4ffae5c844b8f48b71f51114a60490, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1885291398604952596, guid: bf4ffae5c844b8f48b71f51114a60490, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4106678445308772903, guid: bf4ffae5c844b8f48b71f51114a60490, type: 3}
       propertyPath: m_Name
@@ -64454,7 +64625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4106678445308772903, guid: bf4ffae5c844b8f48b71f51114a60490, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5366936458870671363, guid: bf4ffae5c844b8f48b71f51114a60490, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64839,15 +65010,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -64991,6 +65164,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2459450961562074507, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 68f35136d7fd3ea478ded3393fb9fe1f, type: 3}
+  m_Resource: {fileID: 8300000, guid: 68f35136d7fd3ea478ded3393fb9fe1f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -65181,15 +65355,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -65473,6 +65649,8 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -131215,6 +131393,7 @@ PolygonCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650238483}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -131238,7 +131417,8 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -131267,11 +131447,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1885291398604952596, guid: bf4ffae5c844b8f48b71f51114a60490, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1885291398604952596, guid: bf4ffae5c844b8f48b71f51114a60490, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4106678445308772903, guid: bf4ffae5c844b8f48b71f51114a60490, type: 3}
       propertyPath: m_Name
@@ -131279,7 +131459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4106678445308772903, guid: bf4ffae5c844b8f48b71f51114a60490, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5366936458870671363, guid: bf4ffae5c844b8f48b71f51114a60490, type: 3}
       propertyPath: m_LocalPosition.x
@@ -131369,6 +131549,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: afa80e68369280c41b1b4506ea140b9d, type: 3}
+  m_Resource: {fileID: 8300000, guid: afa80e68369280c41b1b4506ea140b9d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -131954,11 +132135,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2918542949259496594, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2918542949259496594, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3210284536853749872, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -132006,7 +132187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9070902483807494068, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -132132,15 +132313,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -132310,6 +132493,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: decfc7d0b2addf842b4b38e046500f85, type: 3}
+  m_Resource: {fileID: 8300000, guid: decfc7d0b2addf842b4b38e046500f85, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -132405,11 +132589,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2918542949259496594, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2918542949259496594, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3210284536853749872, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -132457,7 +132641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9070902483807494068, guid: 1362c055c7a256b4b9a63779f448b90d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -132678,6 +132862,7 @@ CapsuleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752805432}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -132701,7 +132886,8 @@ CapsuleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: -0.04709968, y: -0.2821293}
   m_Size: {x: 0.78259796, y: 2.0666552}
   m_Direction: 0
@@ -132921,11 +133107,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 687399859667035321, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 687399859667035321, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8702621849284060521, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_Name
@@ -132933,7 +133119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8702621849284060521, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -133646,11 +133832,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -133658,7 +133844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -133880,15 +134066,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -133957,6 +134145,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9fc85d42054705b4fb24c2a09dee6994, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9fc85d42054705b4fb24c2a09dee6994, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -134085,6 +134274,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: f283eec2bc9bdbe46aa9e2962f22dc23, type: 3}
+  m_Resource: {fileID: 8300000, guid: f283eec2bc9bdbe46aa9e2962f22dc23, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -134213,6 +134403,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2459450961562074507, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: b7e50e520924e3a458ddd47dfe5e54ce, type: 3}
+  m_Resource: {fileID: 8300000, guid: b7e50e520924e3a458ddd47dfe5e54ce, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -134553,15 +134744,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -134741,11 +134934,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506756376007078107, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_Name
@@ -134753,7 +134946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191753407163161982, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260142837943007207, guid: 3712189b8ed09384191271a02de8c8be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -134976,15 +135169,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -135157,6 +135352,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 415fc2f8c8a23a7409c961631317c55e, type: 3}
+  m_Resource: {fileID: 8300000, guid: 415fc2f8c8a23a7409c961631317c55e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -135671,15 +135867,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -135786,15 +135984,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -136109,6 +136309,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 470a4ef1acbafde48821a531d927081d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 470a4ef1acbafde48821a531d927081d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -136617,15 +136818,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -137299,11 +137502,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 687399859667035321, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 687399859667035321, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8702621849284060521, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_Name
@@ -137311,7 +137514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8702621849284060521, guid: c4129aea5c1cd4644bed0787db707c68, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -137418,15 +137621,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -137552,15 +137757,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -137691,15 +137898,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -137836,15 +138045,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -138491,6 +138702,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2421643435785727191, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: 09203079898303140a806f6507022d32, type: 3}
+  m_Resource: {fileID: 8300000, guid: 09203079898303140a806f6507022d32, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -138676,15 +138888,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -138955,15 +139169,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -139135,15 +139351,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -139404,15 +139622,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -139614,15 +139834,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -139767,15 +139989,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -139973,15 +140197,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -140062,15 +140288,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -140631,15 +140859,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
