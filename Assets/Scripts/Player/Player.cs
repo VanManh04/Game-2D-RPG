@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : Entity
 {
@@ -26,6 +27,7 @@ public class Player : Entity
     public SkillManager skill {  get; private set; }// trinh quan ly skill
     public GameObject sword; // { get; private set; }   // kiem cua nguoi choi
     public PlayerFX fx {  get; private set; }
+
     #region State
     public PlayerStateMachine stateMachine { get; private set; }// may trang thai cua nguoi choi
 

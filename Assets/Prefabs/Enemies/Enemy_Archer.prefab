@@ -80,6 +80,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -379,6 +381,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -416,7 +420,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &3098607915410198086
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -430,6 +434,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -799,6 +804,7 @@ CapsuleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9070902483807494068}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -822,7 +828,8 @@ CapsuleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: -0.032014847, y: 0.040225506}
   m_Size: {x: 1.5130959, y: 2.2564774}
   m_Direction: 0
@@ -934,15 +941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxItemsToDrop: 4
   itemPool:
-  - {fileID: 11400000, guid: 3422d499362e0d648975ad448a5cf5b4, type: 2}
-  - {fileID: 11400000, guid: 5f38eb5dd70ed2f41b9fb9b693335e35, type: 2}
-  - {fileID: 11400000, guid: 84c68594568880b4980596fc2b9d42be, type: 2}
-  - {fileID: 11400000, guid: b171d435a7bf7e54d93a89bf826c6dcd, type: 2}
-  - {fileID: 11400000, guid: fd1c157ed9510f94f8dd1ffc66e77537, type: 2}
-  - {fileID: 11400000, guid: 667fe35114f3d3b47aad6f5d52233b00, type: 2}
-  - {fileID: 11400000, guid: 457b2e795f058cf4990dde75127a3cb7, type: 2}
-  - {fileID: 11400000, guid: e319ec641fe686843b8d8ff4f52650d8, type: 2}
-  - {fileID: 11400000, guid: 7020ccdf1a8fdb14c82744eeb1512897, type: 2}
+  - {fileID: 11400000, guid: e7135bc2a89219947bb194e9f207d84e, type: 2}
   dropPrefabs: {fileID: 1212890706246006704, guid: 7965f13c20eb8814baec925ef548d657, type: 3}
 --- !u!114 &5582096722693495117
 MonoBehaviour:

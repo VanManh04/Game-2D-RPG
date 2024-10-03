@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // PlayerState la lop co so cho trang thai cua nguoi choi
 public class PlayerState
@@ -17,6 +18,9 @@ public class PlayerState
     protected float stateTimer;  // bo dem thoi gian cho trang thai
     protected bool triggerCalled;  // Co de kiem tra xem trigger da duoc goi hay chue
 
+
+    //private InputController inputController;
+    //private InputAction move;
 
     // Ham dung cua PlayerState
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
@@ -44,6 +48,10 @@ public class PlayerState
         xInput = Input.GetAxisRaw("Horizontal");
         yInput = Input.GetAxisRaw("Vertical");
         player.anim.SetFloat("yVelocity", rb.velocity.y);
+
+        //inputController = new InputController();
+        //move = inputController.Player.Move;
+        //rb.velocity = move.ReadValue<Vector2>() * 10 * player.moveSpeed;
     }
 
     public virtual void Exit()

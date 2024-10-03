@@ -931,7 +931,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   maxHealth:
-    baseValue: 1
+    baseValue: 1000
     modifiers: 
   armor:
     baseValue: 0
@@ -1005,14 +1005,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxItemsToDrop: 2
   itemPool:
-  - {fileID: 11400000, guid: e7135bc2a89219947bb194e9f207d84e, type: 2}
   - {fileID: 11400000, guid: 717d8b69a635ba4408199b1026b0d927, type: 2}
-  - {fileID: 11400000, guid: 667fe35114f3d3b47aad6f5d52233b00, type: 2}
-  - {fileID: 11400000, guid: fd1c157ed9510f94f8dd1ffc66e77537, type: 2}
-  - {fileID: 11400000, guid: b171d435a7bf7e54d93a89bf826c6dcd, type: 2}
-  - {fileID: 11400000, guid: 457b2e795f058cf4990dde75127a3cb7, type: 2}
-  - {fileID: 11400000, guid: e319ec641fe686843b8d8ff4f52650d8, type: 2}
-  - {fileID: 11400000, guid: 7020ccdf1a8fdb14c82744eeb1512897, type: 2}
+  - {fileID: 11400000, guid: 0bca3507af1bf4a4f892101b8619ea81, type: 2}
+  - {fileID: 11400000, guid: 9f5cae6d3d4301f439c5ceedb774f96c, type: 2}
   dropPrefabs: {fileID: 1212890706246006704, guid: 7965f13c20eb8814baec925ef548d657, type: 3}
 --- !u!114 &5751239352207564200
 MonoBehaviour:

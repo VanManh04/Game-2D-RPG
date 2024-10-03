@@ -5,6 +5,7 @@ public class Checkpoint : MonoBehaviour
     private Animator anim;
     public string id;
     public bool activationStatus;
+    public GameObject LightFire;
 
     private void Start()
     {
@@ -28,10 +29,11 @@ public class Checkpoint : MonoBehaviour
 
     public void ActivateCheckpoint()
     {
-        if(!activationStatus)
+        if (!activationStatus)
             AudioManager.instance.PlaySFX(4, transform);
-        
+
         activationStatus = true;
+        LightFire.SetActive(true);
         anim.SetBool("active", true);
     }
 }

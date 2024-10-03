@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour, ISaveManager
     public int lostCurrencyAmount;
     [SerializeField] private float lostCurrencyX;
     [SerializeField] private float lostCurrencyY;
+    
+    [Header("Chapter")]
+    public int chapter { get; private set; }
 
     private void Awake()
     {
@@ -80,6 +83,8 @@ public class GameManager : MonoBehaviour, ISaveManager
         PlacePlayerAtClosestCheckpoint(_data);
         LoadLostCurrency(_data);
         LoadCheckpoints(_data);
+
+        chapter = _data.chapter;
     }
 
     public void SaveData(ref GameData _data)

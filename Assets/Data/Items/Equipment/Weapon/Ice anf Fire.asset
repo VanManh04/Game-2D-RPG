@@ -15,29 +15,33 @@ MonoBehaviour:
   itemType: 1
   itemName: Ice anf Fire
   icon: {fileID: 1398721256, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemId: ab6fa5532c3c26447a817c6e5e83b137
   dropChance: 6.2
   equipmentType: 0
   itemCooldown: 0
   itemEffects:
   - {fileID: 11400000, guid: 02925a9c3eef8cc48a7333b12b0aacf4, type: 2}
   - {fileID: 11400000, guid: a87ed872e5cea9943ae1b23ceeb306f0, type: 2}
-  itemEffectDesctiption: 'Unique: Each 3rd attack you launch ice and fire projectile'
   strength: 0
   agility: 0
   intelligence: 0
   vitality: 0
-  damage: 0
-  critChance: 0
+  damage: 130
+  critChance: 25
   critPower: 0
   health: 0
   armor: 0
   evasion: 0
   magicResistance: 0
-  fireDamage: 5
-  iceDamage: 7
-  lightingDamage: 0
+  fireDamage: 22
+  iceDamage: 22
+  lightingDamage: 10
   craftingMaterials:
   - data: {fileID: 11400000, guid: e7135bc2a89219947bb194e9f207d84e, type: 2}
-    stackSize: 1
+    stackSize: 55
   - data: {fileID: 11400000, guid: 717d8b69a635ba4408199b1026b0d927, type: 2}
+    stackSize: 32
+  - data: {fileID: 11400000, guid: 0bca3507af1bf4a4f892101b8619ea81, type: 2}
+    stackSize: 1
+  - data: {fileID: 11400000, guid: 9f5cae6d3d4301f439c5ceedb774f96c, type: 2}
     stackSize: 1

@@ -15,6 +15,7 @@ MonoBehaviour:
   itemType: 1
   itemName: Woodent sword
   icon: {fileID: 1025091068, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemId: 6f7d6fdc2d157f140a492b988b2aabc4
   dropChance: 64.2
   equipmentType: 0
   itemCooldown: 0
@@ -23,16 +24,16 @@ MonoBehaviour:
   agility: 0
   intelligence: 0
   vitality: 0
-  damage: 4
-  critChance: 0
+  damage: 15
+  critChance: 15
   critPower: 0
   health: 0
   armor: 0
-  evasion: 3
+  evasion: 0
   magicResistance: 0
   fireDamage: 0
-  iceDamage: 0
+  iceDamage: 5
   lightingDamage: 0
   craftingMaterials:
-  - data: {fileID: 11400000, guid: e7135bc2a89219947bb194e9f207d84e, type: 2}
-    stackSize: 1
+  - data: {fileID: 11400000, guid: 02835395860924645865f841fbcfb006, type: 2}
+    stackSize: 5

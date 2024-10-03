@@ -40,6 +40,8 @@ public class Inventory : MonoBehaviour, ISaveManager
     public List<InventoryItem> loadedItems;
     public List<ItemData_Equipment> loadedEquipment;
 
+    public int Chapter { get; private set; }
+
     private void Awake()
     {
         if (instance == null)

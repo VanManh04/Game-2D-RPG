@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b5f3406b7b9c7448c621fc103ee73a, type: 3}
+  m_Name: Light Sword
+  m_EditorClassIdentifier: 
+  itemType: 1
+  itemName: Light Sword
+  icon: {fileID: 367297872, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemId: cf7436f770003a7489203df9328240ba
+  dropChance: 0
+  equipmentType: 0
+  itemCooldown: 0
+  itemEffects:
+  - {fileID: 11400000, guid: e1e30e28e4ee9f04088c6e098bee63b4, type: 2}
+  strength: 0
+  agility: 0
+  intelligence: 0
+  vitality: 0
+  damage: 42
+  critChance: 31
+  critPower: 0
+  health: 0
+  armor: 0
+  evasion: 0
+  magicResistance: 0
+  fireDamage: 10
+  iceDamage: 3
+  lightingDamage: 5
+  craftingMaterials:
+  - data: {fileID: 11400000, guid: e7135bc2a89219947bb194e9f207d84e, type: 2}
+    stackSize: 14
+  - data: {fileID: 11400000, guid: 0bca3507af1bf4a4f892101b8619ea81, type: 2}
+    stackSize: 1
+  - data: {fileID: 11400000, guid: 9f5cae6d3d4301f439c5ceedb774f96c, type: 2}
+    stackSize: 1

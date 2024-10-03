@@ -18,6 +18,8 @@ public class GameData
 
     public SerializableDictionary<string, float> volumeSettings;
 
+    public int chapter = 1;
+
     public GameData()
     {
         this.lostCurrencyX = 0;

@@ -40,6 +40,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882509869680082254}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -63,7 +64,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -74,7 +76,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 30, y: 20}
   m_EdgeRadius: 0
 --- !u!1 &1716361260825360778
@@ -346,6 +347,7 @@ CapsuleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2665769406762675032}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -369,7 +371,8 @@ CapsuleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0.033504486, y: -0.096796036}
   m_Size: {x: 1.8239746, y: 3.423592}
   m_Direction: 0
@@ -481,17 +484,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxItemsToDrop: 10
   itemPool:
-  - {fileID: 11400000, guid: 5cd41bbd606961448ad4ef69559e0ce6, type: 2}
-  - {fileID: 11400000, guid: ab6fa5532c3c26447a817c6e5e83b137, type: 2}
-  - {fileID: 11400000, guid: d35c9f371247bce4b881202ccabd0211, type: 2}
-  - {fileID: 11400000, guid: cf7436f770003a7489203df9328240ba, type: 2}
-  - {fileID: 11400000, guid: 6f7d6fdc2d157f140a492b988b2aabc4, type: 2}
-  - {fileID: 11400000, guid: 457b2e795f058cf4990dde75127a3cb7, type: 2}
-  - {fileID: 11400000, guid: e319ec641fe686843b8d8ff4f52650d8, type: 2}
-  - {fileID: 11400000, guid: 7020ccdf1a8fdb14c82744eeb1512897, type: 2}
-  - {fileID: 11400000, guid: 3422d499362e0d648975ad448a5cf5b4, type: 2}
-  - {fileID: 11400000, guid: 5f38eb5dd70ed2f41b9fb9b693335e35, type: 2}
-  - {fileID: 11400000, guid: 84c68594568880b4980596fc2b9d42be, type: 2}
+  - {fileID: 11400000, guid: e7135bc2a89219947bb194e9f207d84e, type: 2}
+  - {fileID: 11400000, guid: 9f5cae6d3d4301f439c5ceedb774f96c, type: 2}
+  - {fileID: 11400000, guid: 0bca3507af1bf4a4f892101b8619ea81, type: 2}
+  - {fileID: 11400000, guid: 717d8b69a635ba4408199b1026b0d927, type: 2}
+  - {fileID: 11400000, guid: 02835395860924645865f841fbcfb006, type: 2}
   dropPrefabs: {fileID: 1212890706246006704, guid: 7965f13c20eb8814baec925ef548d657, type: 3}
 --- !u!114 &3100390831054551153
 MonoBehaviour:
@@ -669,6 +666,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -706,7 +705,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &5052892071907118291
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -720,6 +719,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -861,6 +861,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
